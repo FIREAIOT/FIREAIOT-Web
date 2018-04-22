@@ -11,6 +11,6 @@ class PagesTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200)->assertSee('ILoveMath');
+        $response->assertStatus(200)->assertSee('I Love Math');
     }
 }
