@@ -5,7 +5,7 @@
                 <h4 class="mg-md">
                     <b>Company</b>
                 </h4>
-                <a href="{{ route('about') }}" class="btn-link">About us</a>
+                <a href="{{ route('home.index') }}" class="btn-link">About us</a>
                 <br>
             </div>
 
@@ -13,13 +13,7 @@
                 <h4 class="mg-md">
                     <b>Services</b>
                 </h4>
-                <a href="{{ route('services') }}" class="btn-link">iOS Apps</a>
-                <br>
-                <a href="{{ route('services') }}" class="btn-link">Android Apps</a>
-                <br>
-                <a href="{{ route('services') }}" class="btn-link">Web Development</a>
-                <br>
-                <a href="{{ route('services') }}" class="btn-link">Machine Vision</a>
+                <a href="#" class="btn-link">iOS Apps</a>
                 <br>
             </div>
 
@@ -31,13 +25,13 @@
                 {{--<br>--}}
                 {{--<a href="{{ route('terms') }}" class="btn-link">Terms of use</a>--}}
                 {{--<br>--}}
-                <a href="{{ route('education') }}" class="btn-link">Education</a>
+                <a href="#" class="btn-link">Education</a>
                 <br>
-                <a href="{{ route('blog.index') }}" class="btn-link">Blog</a>
+                <a href="#" class="btn-link">Blog</a>
                 <br>
-                <a href="{{ route('contactUs.index') }}" class="btn-link">Contact us</a>
+                <a href="#" class="btn-link">Contact us</a>
                 <br>
-                <a href="{{ route('bank') }}" class="btn-link">Bank</a>
+                <a href="#" class="btn-link">Bank</a>
                 <br>
             </div>
 
@@ -68,9 +62,9 @@
         </div>
         <hr>
         <div class="text-center">
-            Built with <div class="pulse txt-red-color" style="display: inline-block">❤︎</div>︎ in Malaysia
+            Built with <div class="pulse txt-red-color" style="display: inline-block">❤︎</div>︎ By Binary Torch
             <br>
-            Binary Torch Sdn. Bhd. 2017 © All rights reserved
+            I Love Math 2018 © All rights reserved
         </div>
         <br>
     </div>

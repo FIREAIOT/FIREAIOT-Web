@@ -41,7 +41,7 @@
                    data-aos-delay="400"
                    data-aos-once="true"
                    class="btn btn-white btn-lg margin-top-20"
-                   href="{{ route('project.index') }}">Start a project</a>
+                   href="#">Start a project</a>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 center-large">
-                <img width="100%" src="@image(1.svg)">
+                <img width="100%" src="#">
             </div>
             <div class="col-md-6"
                  style="padding: 50px;">
@@ -20,7 +20,7 @@
                         <h4 class="grey-text-color">
                             Our highly-skilled iOS developers provide optimized code solutions for your needs.
                         </h4>
-                        <a href="{{ route('services') }}" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
+                        <a href="#" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
                     </div>
                     <div class="col-md-6">
                         <h4 class="title">
@@ -29,7 +29,7 @@
                         <h4 class="grey-text-color">
                             We provide expertise in developing Android apps with the best features ever.
                         </h4>
-                        <a href="{{ route('services') }}" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
+                        <a href="#" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
                     </div>
                     <div class="clearfix"></div>
                     <br>
@@ -40,7 +40,7 @@
                         <h4 class="grey-text-color">
                             We build up your customized website with strong, scalable and bug-free codes.
                         </h4>
-                        <a href="{{ route('services') }}" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
+                        <a href="#" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
                     </div>
                     <div class="col-md-6">
                         <h4 class="title">
@@ -49,7 +49,7 @@
                         <h4 class="grey-text-color">
                             Our expert engineers are capable of solving the most challenging problems.
                         </h4>
-                        <a href="{{ route('services') }}" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
+                        <a href="#" class="btn btn-primary btn-simple btn-compact-zero">See More →</a>
                     </div>
                 </div>
             </div>

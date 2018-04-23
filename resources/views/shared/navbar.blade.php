@@ -11,33 +11,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('home') }}"><span><img height="100%" src="@image(logo.png)" alt="binary torch logo"></span>Binary Torch</a>
+            <a class="navbar-brand" href="{{ route('home.index') }}"><span><img height="100%" src="@image(logo.png)" alt="binary torch logo"></span>Binary Torch</a>
         </div>
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{ route('home') }}" class="btn btn-simple {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
+                    <a href="{{ route('home.index') }}" class="btn btn-simple {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
                         Home
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('about') }}" class="btn btn-simple {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
-                        Company
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('services') }}" class="btn btn-simple {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
-                        Services
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('education') }}" class="btn btn-simple {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
-                        Education
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('blog.index') }}" class="btn btn-simple {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
-                        Blog
                     </a>
                 </li>
                 @if(auth()->check())
@@ -45,7 +25,7 @@
                         <a href="#" class="dropdown-toggle btn {{ isset($theme) ?  "" : "btn-white" }}" data-toggle="dropdown">{{ auth()->user()->name }} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{{ route('portal.index') }}">
+                                <a href="#">
                                     <i class="material-icons">important_devices</i>
                                     Portal
                                 </a>
@@ -68,7 +48,7 @@
                     </li>
                 @else
                     <li>
-                        <a href="{{ route('portal.index') }}" class="btn btn-outline {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
+                        <a href="#" class="btn btn-outline {{ isset($theme) ?  "" : "btn-white" }} btn-compact">
                             Student Portal
                         </a>
                     </li>
