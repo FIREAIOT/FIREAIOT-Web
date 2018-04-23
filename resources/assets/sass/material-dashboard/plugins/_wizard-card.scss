@@ -1,6 +1,11 @@
-.wizard-card{
+.card-wizard{
     min-height: 410px;
     @include shadow-16dp();
+    @include transition($general-transition-time, $transition-linear);
+
+    &.active{
+        opacity: 1;
+    }
 
     .picture-container{
         position: relative;
@@ -36,7 +41,7 @@
         font-size: 12px;
         text-transform: uppercase;
         -webkit-font-smoothing: subpixel-antialiased;
-        top:-4px;
+        top:-3px;
         left: 0px;
         border-radius: 4px;
         color: $white-color;
@@ -102,7 +107,7 @@
 
     .wizard-header{
         text-align: center;
-        padding: 25px 0 0px;
+        padding: 25px 0 35px;
 
         h5{
            margin: 5px 0 0;
@@ -127,6 +132,12 @@
         text-align: center;
         cursor: pointer;
         margin-top: 20px;
+
+        &[disabled]{
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: .26;
+        }
 
         .icon{
             text-align: center;
@@ -186,7 +197,7 @@
             border-radius: 0 ;
             line-height: 18px;
             text-transform: uppercase;
-            font-size: 15px;
+            font-size: 12px;
             font-weight: 500;
             min-width: 100px;
             text-align: center;
@@ -206,17 +217,6 @@
             display: block;
             font-size: 30px;
             padding: 15px 0;
-        }
-
-        > li.active {
-            border-radius: 4px;
-            background-color: $brand-info;
-            @include shadow-4dp-color($brand-info);
-            > *{
-                color: #fff !important;
-            }
-            transition: all .2s ease-in-out;
-            transform: scale(1.05, 1.05);
         }
     }
 

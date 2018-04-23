@@ -11,18 +11,18 @@
     },
     "devDependencies": {
         "axios": "^0.18",
+        "babel-plugin-transform-object-rest-spread": "^6.23.0",
+        "babel-preset-es2015": "^6.24.1",
         "bootstrap": "^4.0.0",
-        "popper.js": "^1.12",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
-        "vue": "^2.5.7",
-        "babel-plugin-transform-object-rest-spread": "^6.23.0",
-        "babel-preset-es2015": "^6.24.1",
         "moment": "^2.19.1",
+        "popper.js": "^1.14.3",
         "semantic-ui-dimmer": "^2.2.10",
-        "semantic-ui-loader": "^2.2.10"
+        "semantic-ui-loader": "^2.2.10",
+        "vue": "^2.5.7"
     },
     "dependencies": {
         "aos": "^2.2.0",

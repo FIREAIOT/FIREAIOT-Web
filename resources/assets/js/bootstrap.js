@@ -2,7 +2,7 @@ window._ = require('lodash');
 
 try {
     window.$ = window.jQuery = require('jquery');
-    require('bootstrap-sass');
+    require('bootstrap');
 } catch (e) {}
 
 window.axios = require('axios');
