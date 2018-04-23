@@ -25,15 +25,14 @@
                     data-aos-duration="500"
                     data-aos-once="true"
                     class="title">
-                    From analysis to execution.
+                    Excel your mathematics & physics skills!
                 </h1>
                 <h3 data-aos="fade-up"
                     data-aos-easing="ease-in-sine"
                     data-aos-duration="500"
                     data-aos-delay="50"
                     data-aos-once="true">
-                    We offer various high-quality software services as well as
-                    modern solutions which<br> address real-life issues in many industries.
+                    We challenge your brain with our projects and problems!
                 </h3>
                 <a data-aos="fade-up"
                    data-aos-easing="ease-in-out"
@@ -41,7 +40,7 @@
                    data-aos-delay="400"
                    data-aos-once="true"
                    class="btn btn-white btn-lg margin-top-20"
-                   href="#">Start a project</a>
+                   href="#">Start Learning Now</a>
             </div>
         </div>
     </div>
