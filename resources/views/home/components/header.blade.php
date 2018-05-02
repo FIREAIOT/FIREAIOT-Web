@@ -1,15 +1,9 @@
 <!-- header -->
-<div class="header bg-blue-gradient" style="position: relative;">
-    {{--<video playsinline autoplay muted loop poster="{{ asset("videos/poster.png") }}" style="object-fit: cover;--}}
-  {{--width: 100vw;--}}
-  {{--height: 100vh;--}}
-  {{--position: absolute;--}}
-  {{--top: 0;--}}
-  {{--left: 0;">--}}
-        {{--<source src="{{ asset("videos/background.mp4") }}" type="video/mp4">--}}
-    {{--</video>--}}
+<div class="header bg-blue-gradient">
+
     <div class="container">
         <div class="row">
+            <div class="spacer"></div>
             <div class="col-md-12 text-center">
                 <h1 data-aos="fade-up"
                     data-aos-easing="ease-in-out"
@@ -18,6 +12,13 @@
                     class="title">
                     FIREAIOT
                 </h1>
+                <h2 data-aos="fade-up"
+                    data-aos-easing="ease-in-out"
+                    data-aos-duration="700"
+                    data-aos-once="true"
+                    class="title">
+                    Autonomous IoT-based Firefighting UAV
+                </h2>
             </div>
         </div>
     </div>
