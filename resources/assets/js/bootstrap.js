@@ -39,8 +39,7 @@ require('./material-dashboard/bootstrap-datetimepicker.js');
 require('./material-dashboard/material-dashboard.js');
 require('./material-kit/hipster-cards');
 
-import Echo from 'laravel-echo';
-
+Echo = require('laravel-echo');
 window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({

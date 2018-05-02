@@ -2,11 +2,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import accordion from './app/Accordion.vue'
+import alarmsViewer from './app/AlarmsViewer.vue'
 
 const app = new Vue({
     el: '#app',
     components: {
-        accordion
+        alarmsViewer
     }
 });

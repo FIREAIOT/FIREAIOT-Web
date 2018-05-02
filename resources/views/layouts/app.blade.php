@@ -24,15 +24,6 @@
                 display: none;
             }
         </style>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-	    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109211505-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-109211505-1');
-        </script>
         {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet">--}}
     </head>
 
