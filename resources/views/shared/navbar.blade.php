@@ -8,9 +8,26 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <div class="form-inline ml-auto">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route("dashboard.index") }}">Dashboard <span class="sr-only">(current)</span></a>
-                    </li>
+                    @if(auth()->check())
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}"
+                               class="btn btn-danger"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{--<i class="material-icons">power_settings_new</i>--}}
+                                Logout
+                            </a>
+                            <form id="logout-form"
+                                  action="{{ route('logout') }}"
+                                  method="POST"
+                                  style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    @else
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route("dashboard.index") }}">Dashboard <span class="sr-only">(current)</span></a>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
