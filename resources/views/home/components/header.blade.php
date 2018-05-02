@@ -25,22 +25,8 @@
                     data-aos-duration="500"
                     data-aos-once="true"
                     class="title">
-                    Excel your mathematics & physics skills!
+                    FIREAIOT
                 </h1>
-                <h3 data-aos="fade-up"
-                    data-aos-easing="ease-in-sine"
-                    data-aos-duration="500"
-                    data-aos-delay="50"
-                    data-aos-once="true">
-                    We challenge your brain with our projects and problems!
-                </h3>
-                <a data-aos="fade-up"
-                   data-aos-easing="ease-in-out"
-                   data-aos-duration="500"
-                   data-aos-delay="400"
-                   data-aos-once="true"
-                   class="btn btn-white btn-lg margin-top-20"
-                   href="#">Start Learning Now</a>
             </div>
         </div>
     </div>
