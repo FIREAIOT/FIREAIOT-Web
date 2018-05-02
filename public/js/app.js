@@ -43248,8 +43248,8 @@ window.Pusher = __webpack_require__(223);
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: "ce13865b5c8d549ddf02",
-    cluster: "ap1",
+    key: "",
+    cluster: "mt1",
     encrypted: true
 });
 
