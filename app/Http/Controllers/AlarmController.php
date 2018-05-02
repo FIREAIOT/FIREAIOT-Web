@@ -16,7 +16,9 @@ class AlarmController extends Controller
      */
     public function store(StoreAlarmRequest $request)
     {
-        auth()->user()->alarms()->create($request->only("longitude", "latitude"));
+        auth()->user()
+            ->alarms()
+            ->create($request->only("longitude", "latitude"));
 
         return response()->json("okay", 201);
     }
