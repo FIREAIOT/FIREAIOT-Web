@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\Exceptions\Handler;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -47,7 +48,17 @@ abstract class TestCase extends BaseTestCase
         $this->app->instance(ExceptionHandler::class, $this->oldExceptionHandler);
         return $this;
     }
-    
+
+    /**
+     * @param $user
+     * @return $this
+     */
+    protected function signIn($user = null)
+    {
+        $this->actingAs($user ?? factory(User::class)->create(), 'api');
+        return $this;
+    }
+
     /**
      * @return array
      */
