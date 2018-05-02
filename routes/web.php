@@ -1,9 +1,5 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@index');
 
 Auth::routes();
-
-Route::view('/', 'home.index')->name('home.index');
