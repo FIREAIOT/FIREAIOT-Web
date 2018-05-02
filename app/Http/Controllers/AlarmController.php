@@ -4,20 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Alarm;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreAlarmRequest;
 
 class AlarmController extends Controller
 {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param StoreAlarmRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAlarmRequest $request)
     {
         auth()->user()->alarms()->create($request->only("longitude", "latitude"));
 
-        return response()->json("", 201);
+        return response()->json("okay", 201);
     }
 
     /**
