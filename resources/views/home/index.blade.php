@@ -5,4 +5,5 @@
 @section('content')
     @include('shared.navbar')
     @include('home.components.header')
+    <div class="spacer"></div>
 @endsection

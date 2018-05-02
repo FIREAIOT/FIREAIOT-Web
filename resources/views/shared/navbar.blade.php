@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white no-margin" style="border-radius: 0px; box-shadow: none !important; position: absolute; width: 100%;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white no-margin" style="border-radius: 0px; box-shadow: none !important; position: absolute; width: 100%; z-index:1000;">
     <div class="container">
         <a class="navbar-brand" href="#"> <img height="30px" src="{{ asset("images/logo.png") }}" alt="FIREAIOT logo"> FIREAIOT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

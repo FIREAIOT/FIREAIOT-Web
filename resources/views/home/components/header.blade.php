@@ -1,5 +1,14 @@
 <!-- header -->
-<div class="header bg-blue-gradient">
+<div class="header bg-blue-gradient" style="position: relative">
+    <video playsinline autoplay muted loop poster="{{ asset("videos/poster.png") }}" style="object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;">
+        <source src="{{ asset("videos/background.mp4") }}" type="video/mp4">
+    </video>
 
     <div class="container">
         <div class="row">
