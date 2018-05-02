@@ -38,3 +38,14 @@ require('./material-dashboard/jquery.bootstrap-wizard.js');
 require('./material-dashboard/bootstrap-datetimepicker.js');
 require('./material-dashboard/material-dashboard.js');
 require('./material-kit/hipster-cards');
+
+import Echo from 'laravel-echo';
+
+window.Pusher = require('pusher-js');
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: process.env.MIX_PUSHER_APP_KEY,
+    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+    encrypted: true
+});
