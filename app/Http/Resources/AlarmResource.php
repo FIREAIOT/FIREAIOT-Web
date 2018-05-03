@@ -19,7 +19,8 @@ class AlarmResource extends JsonResource
             "user"      => $this->user->name,
             "longitude" => $this->longitude,
             "latitude"  => $this->latitude,
-            "status"    => $this->status->name
+            "status"    => $this->status->name,
+            "createdAt" => $this->created_at->diffForHumans()
         ];
     }
 }
