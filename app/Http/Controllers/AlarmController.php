@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Alarm;
 use Illuminate\Http\Request;
+use App\Http\Resources\AlarmResource;
 use App\Http\Requests\StoreAlarmRequest;
 
 class AlarmController extends Controller
 {
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return response()->json(["alarms" => Alarm::get()], 200);
+        return AlarmResource::collection(Alarm::get());
     }
 
     /**

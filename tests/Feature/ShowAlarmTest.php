@@ -6,6 +6,15 @@ use Tests\TestCase;
 
 class ShowAlarmTest extends TestCase
 {
+    /**
+     * Setup the test
+     */
+    protected function setUp(){
+        parent::setUp();
+
+        $this->seed(\StatusTableSeeder::class);
+    }
+
     /** @test */
     public function a_normal_user_may_not_view_all_reported_alarms()
     {

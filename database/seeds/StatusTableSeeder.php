@@ -12,15 +12,15 @@ class StatusTableSeeder extends Seeder
     public function run()
     {
         \App\Status::create([
-            "pending"
+            "name" => "pending"
         ]);
 
         \App\Status::create([
-            "inProgress"
+            "name" => "inProgress"
         ]);
 
         \App\Status::create([
-            "completed"
+            "name" => "completed"
         ]);
     }
 }
