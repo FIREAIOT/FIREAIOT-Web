@@ -9,6 +9,14 @@ use App\Http\Requests\StoreAlarmRequest;
 class AlarmController extends Controller
 {
     /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function index()
+    {
+        return response()->json(["alarms" => Alarm::get()], 200);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param StoreAlarmRequest $request

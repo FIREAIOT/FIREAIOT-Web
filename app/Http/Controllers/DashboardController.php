@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Alarm;
-
 class DashboardController extends Controller
 {
     /**
@@ -11,6 +9,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view("dashboard.index", ["alarms" => Alarm::all()]);
+        return view("dashboard.index");
     }
 }

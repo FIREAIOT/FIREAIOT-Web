@@ -9,6 +9,8 @@ class DashboardTest extends TestCase
     /** @test */
     public function a_guest_may_not_visit_dashboard_page()
     {
+        $this->withExceptionHandling();
+
         $this->get("/dashboard")
             ->assertStatus(302)
             ->assertRedirect("/login");
@@ -21,7 +23,8 @@ class DashboardTest extends TestCase
 
         $this->signIn();
 
-        $this->get("/dashboard")->assertStatus(401);
+        $this->get("/dashboard")
+            ->assertStatus(401);
     }
 
     /** @test */
@@ -29,16 +32,30 @@ class DashboardTest extends TestCase
     {
         $this->signInAdmin();
 
-        $this->get("/dashboard")->assertStatus(200);
+        $this->get("/dashboard")
+            ->assertStatus(200);
     }
 
     /** @test */
-    public function an_admin_can_view_reported_alarms()
+    public function a_normal_user_may_not_view_all_reported_alarms()
+    {
+        $this->withExceptionHandling();
+
+        $this->signIn();
+
+        $this->get("/api/alarms")
+            ->assertStatus(401);
+    }
+
+    /** @test */
+    public function an_admin_can_view_all_reported_alarms()
     {
         $alarm = factory(\App\Alarm::class)->create();
 
         $this->signInAdmin();
 
-        $this->get("/dashboard")->assertSee($alarm->latitude)->assertSee($alarm->longitude);
+        $this->get("/api/alarms")
+            ->assertStatus(200)
+            ->assertSee($alarm->longitude);
     }
 }
