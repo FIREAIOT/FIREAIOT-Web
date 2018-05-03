@@ -15,7 +15,9 @@
                                 <br>
                             </div>
                             <div class="col-md-8 justify-content-center" id="details">
-                                longitude: {{ longitude }}, latitude: {{ latitude }}
+                                <br>
+                                <p>New Alarm</p>
+                                Longitude: {{ longitude }}, Latitude: {{ latitude }}
                             </div>
                         </div>
                     </div>
@@ -35,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-8 no-padding-left">
-                                <gmap-map :center="selectedAlarm != null ? position(selectedAlarm) : defaultLocation" :zoom="7" ref="mmm" id="map">
+                                <gmap-map :center="selectedAlarm != null ? position(selectedAlarm) : defaultLocation" :zoom="13" ref="mmm" id="map">
                                     <gmap-marker :key="index" v-for="(alarm, index) in alarms" :position="position(alarm)"></gmap-marker>
                                 </gmap-map>
                             </div>

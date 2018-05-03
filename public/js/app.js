@@ -84364,6 +84364,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -86309,10 +86311,13 @@ var render = function() {
                     attrs: { id: "details" }
                   },
                   [
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("New Alarm")]),
                     _vm._v(
-                      "\n                            longitude: " +
+                      "\n                            Longitude: " +
                         _vm._s(_vm.longitude) +
-                        ", latitude: " +
+                        ", Latitude: " +
                         _vm._s(_vm.latitude) +
                         "\n                        "
                     )
@@ -86389,7 +86394,7 @@ var render = function() {
                               _vm.selectedAlarm != null
                                 ? _vm.position(_vm.selectedAlarm)
                                 : _vm.defaultLocation,
-                            zoom: 7,
+                            zoom: 13,
                             id: "map"
                           }
                         },
