@@ -84366,7 +84366,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__, {
     load: {
-        key: 'AIzaSyDiF33NhMowopn9uwf2SFuUaB8eL8_k_Po',
+        key: 'AIzaSyDiF33NhMowopn9uwf2SFuUaB8eL8_k_Po', //The api key is restricted don't play dude :D
         libraries: 'drawing'
     }
 });

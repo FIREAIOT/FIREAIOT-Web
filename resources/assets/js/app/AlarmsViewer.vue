@@ -49,7 +49,7 @@
 
     Vue.use(VueGoogleMaps, {
         load: {
-            key: 'AIzaSyDiF33NhMowopn9uwf2SFuUaB8eL8_k_Po',
+            key: 'AIzaSyDiF33NhMowopn9uwf2SFuUaB8eL8_k_Po', //The api key is restricted don't play dude :D
             libraries: 'drawing'
         },
     });
