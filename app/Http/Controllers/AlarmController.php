@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alarm;
+use App\Events\AlarmReceived;
 use Illuminate\Http\Request;
 use App\Http\Resources\AlarmResource;
 use App\Http\Requests\StoreAlarmRequest;
@@ -14,7 +15,9 @@ class AlarmController extends Controller
      */
     public function index()
     {
-        return AlarmResource::collection(Alarm::get());
+        return AlarmResource::collection(
+            Alarm::get()
+        );
     }
 
     /**
@@ -27,7 +30,9 @@ class AlarmController extends Controller
     {
         auth()->user()
             ->alarms()
-            ->create($request->only("longitude", "latitude"));
+            ->create($request->only("latitude", "longitude"));
+
+        event(new AlarmReceived($request->latitude, $request->longitude));
 
         return response()->json("okay", 201);
     }

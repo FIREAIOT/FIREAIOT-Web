@@ -2,7 +2,9 @@
 
 namespace Tests\Feature;
 
+use App\Events\AlarmReceived;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Event;
 
 class StoreAlarmTest extends TestCase
 {
@@ -32,5 +34,20 @@ class StoreAlarmTest extends TestCase
             "longitude" => 101.43232,
             "latitude"  => 25.43232,
         ]);
+    }
+
+    /** @test */
+    public function alarm_received_event_will_be_fired_when_a_new_alarm_report_placed()
+    {
+        Event::fake();
+
+        $this->signIn();
+
+        $this->json("POST", "/api/alarms", [
+            "longitude" => 101.43232,
+            "latitude"  => 25.43232,
+        ]);
+
+        Event::assertDispatched(AlarmReceived::class);
     }
 }
