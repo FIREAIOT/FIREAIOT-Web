@@ -23,4 +23,14 @@ class DashboardTest extends TestCase
 
         $this->get("/dashboard")->assertStatus(401);
     }
+
+    /** @test */
+    public function admins_can_visit_dashboard()
+    {
+        $this->withExceptionHandling();
+
+        $this->signIn(factory(\App\User::class)->create(["isAdmin" => true]));
+
+        $this->get("/dashboard")->assertStatus(200);
+    }
 }
