@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class FireAlarmReportingTest extends TestCase
+class StoreAlarmTest extends TestCase
 {
     /** @test */
     public function a_guest_may_not_report_a_fire_alarm()
