@@ -84259,6 +84259,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(264)
+}
 var normalizeComponent = __webpack_require__(11)
 /* script */
 var __vue_script__ = __webpack_require__(227)
@@ -84267,7 +84271,7 @@ var __vue_template__ = __webpack_require__(258)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -84311,6 +84315,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -86281,40 +86291,25 @@ var render = function() {
           [
             _vm._m(0),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "card-body",
-                staticStyle: { padding: "0px !important" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-sm-4",
-                      staticStyle: { "border-right": "1px solid #eaeaea" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            Alarms\n                        "
-                      )
-                    ]
-                  ),
+            _c("div", { staticClass: "card-body no-padding" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  staticStyle: { height: "500px", overflow: "hidden" }
+                },
+                [
+                  _vm._m(1),
                   _vm._v(" "),
                   _c(
                     "div",
-                    {
-                      staticClass: "col-sm-8",
-                      staticStyle: { "padding-left": "0px !important" }
-                    },
+                    { staticClass: "col-sm-8 no-padding-left" },
                     [
                       _c(
                         "gmap-map",
                         {
                           ref: "mmm",
-                          staticStyle: { width: "100%", height: "500px" },
-                          attrs: { center: _vm.center, zoom: 7 }
+                          attrs: { center: _vm.center, zoom: 7, id: "map" }
                         },
                         _vm._l(_vm.markers, function(m, index) {
                           return _c("gmap-marker", {
@@ -86335,9 +86330,9 @@ var render = function() {
                     ],
                     1
                   )
-                ])
-              ]
-            )
+                ]
+              )
+            ])
           ]
         )
       ])
@@ -86349,65 +86344,79 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "card-body", staticStyle: { padding: "0px !important" } },
-      [
-        _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "card-body no-padding" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-4", attrs: { id: "tabs" } }, [
+          _c("br"),
+          _vm._v(" "),
           _c(
-            "div",
+            "ul",
             {
-              staticClass: "col-md-4",
-              staticStyle: {
-                "border-right": "1px solid #eaeaea",
-                "border-bottom": "1px solid #eaeaea"
-              }
+              staticClass: "nav nav-pills nav-pills-info justify-content-center"
             },
             [
-              _c("br"),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link active",
+                    attrs: { href: "#", "data-toggle": "tab" }
+                  },
+                  [_vm._v("Alarms")]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "ul",
-                {
-                  staticClass:
-                    "nav nav-pills nav-pills-info justify-content-center"
-                },
-                [
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link active",
-                        attrs: { href: "#pill1", "data-toggle": "tab" }
-                      },
-                      [_vm._v("Alarms")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "#pill2", "data-toggle": "tab" }
-                      },
-                      [_vm._v("UAVs")]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("br")
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link",
+                    attrs: { href: "#", "data-toggle": "tab" }
+                  },
+                  [_vm._v("UAVs")]
+                )
+              ])
             ]
           ),
           _vm._v(" "),
-          _c("div", {
-            staticClass: "col-md-8 justify-content-center",
-            staticStyle: { "border-bottom": "1px solid #eaeaea" }
-          })
-        ])
-      ]
-    )
+          _c("br")
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "col-md-8 justify-content-center",
+          attrs: { id: "details" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-4", attrs: { id: "cards" } }, [
+      _c(
+        "div",
+        {
+          staticClass: "card no-margin",
+          staticStyle: {
+            "border-left": "20px solid red",
+            "border-radius": "0px"
+          }
+        },
+        [
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "stats" }, [
+              _c("i", { staticClass: "material-icons" }, [
+                _vm._v("access_time")
+              ]),
+              _vm._v(
+                " Updated 2 minutes ago\n                                    "
+              )
+            ])
+          ])
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -86424,6 +86433,50 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(265);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(168)("60e1798e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a2bfdd18\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AlarmsViewer.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a2bfdd18\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AlarmsViewer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(167)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea; height: 100%; overflow-y: scroll; padding: 0px !important;\n}\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
