@@ -23,9 +23,13 @@
                         <div class="row" style="height: 500px; overflow: hidden;">
                             <div class="col-sm-4" id="cards">
                                 <div class="card no-margin card-alarm" v-for="alarm in alarms" :class="{'card-alarm-selected' : selectedAlarm == alarm}" @click="selectedAlarm = alarm">
-                                    <div class="card-body">
+                                    <div class="card-body text-left">
+                                        <p><b>Latitude:</b> {{ alarm.latitude }}</p>
+                                        <p><b>Longitude:</b> {{ alarm.longitude }}</p>
+                                    </div>
+                                    <div class="card-footer">
                                         <div class="stats">
-                                            latitude: {{ alarm.latitude }}, longitude: {{ alarm.longitude }}
+                                            <i class="material-icons">access_time</i> {{ alarm.createdAt }}
                                         </div>
                                     </div>
                                 </div>

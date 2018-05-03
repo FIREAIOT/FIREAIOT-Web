@@ -84360,6 +84360,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -86322,13 +86326,26 @@ var render = function() {
                           }
                         },
                         [
-                          _c("div", { staticClass: "card-body" }, [
+                          _c("div", { staticClass: "card-body text-left" }, [
+                            _c("p", [
+                              _c("b", [_vm._v("Latitude:")]),
+                              _vm._v(" " + _vm._s(alarm.latitude))
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c("b", [_vm._v("Longitude:")]),
+                              _vm._v(" " + _vm._s(alarm.longitude))
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "card-footer" }, [
                             _c("div", { staticClass: "stats" }, [
+                              _c("i", { staticClass: "material-icons" }, [
+                                _vm._v("access_time")
+                              ]),
                               _vm._v(
-                                "\n                                        latitude: " +
-                                  _vm._s(alarm.latitude) +
-                                  ", longitude: " +
-                                  _vm._s(alarm.longitude) +
+                                " " +
+                                  _vm._s(alarm.createdAt) +
                                   "\n                                    "
                               )
                             ])
