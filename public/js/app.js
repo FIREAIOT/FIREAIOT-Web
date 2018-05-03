@@ -84348,6 +84348,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -86279,53 +86281,63 @@ var render = function() {
           [
             _vm._m(0),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-sm-4",
-                    staticStyle: { "border-right": "1px solid #eaeaea" }
-                  },
-                  [
-                    _vm._v(
-                      "\n                            Alarms\n                        "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-sm-8" },
-                  [
-                    _c(
-                      "gmap-map",
-                      {
-                        ref: "mmm",
-                        staticStyle: { width: "100%", height: "500px" },
-                        attrs: { center: _vm.center, zoom: 7 }
-                      },
-                      _vm._l(_vm.markers, function(m, index) {
-                        return _c("gmap-marker", {
-                          key: index,
-                          attrs: {
-                            position: m.position,
-                            clickable: true,
-                            draggable: true
-                          },
-                          on: {
-                            click: function($event) {
-                              _vm.center = m.position
+            _c(
+              "div",
+              {
+                staticClass: "card-body",
+                staticStyle: { padding: "0px !important" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-sm-4",
+                      staticStyle: { "border-right": "1px solid #eaeaea" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Alarms\n                        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-sm-8",
+                      staticStyle: { "padding-left": "0px !important" }
+                    },
+                    [
+                      _c(
+                        "gmap-map",
+                        {
+                          ref: "mmm",
+                          staticStyle: { width: "100%", height: "500px" },
+                          attrs: { center: _vm.center, zoom: 7 }
+                        },
+                        _vm._l(_vm.markers, function(m, index) {
+                          return _c("gmap-marker", {
+                            key: index,
+                            attrs: {
+                              position: m.position,
+                              clickable: true,
+                              draggable: true
+                            },
+                            on: {
+                              click: function($event) {
+                                _vm.center = m.position
+                              }
                             }
-                          }
+                          })
                         })
-                      })
-                    )
-                  ],
-                  1
-                )
-              ])
-            ])
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ]
+            )
           ]
         )
       ])
@@ -86337,58 +86349,65 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        {
-          staticClass: "col-md-4",
-          staticStyle: {
-            "border-right": "1px solid #eaeaea",
-            "border-bottom": "1px solid #eaeaea"
-          }
-        },
-        [
-          _c("br"),
-          _vm._v(" "),
+    return _c(
+      "div",
+      { staticClass: "card-body", staticStyle: { padding: "0px !important" } },
+      [
+        _c("div", { staticClass: "row" }, [
           _c(
-            "ul",
+            "div",
             {
-              staticClass: "nav nav-pills nav-pills-info justify-content-center"
+              staticClass: "col-md-4",
+              staticStyle: {
+                "border-right": "1px solid #eaeaea",
+                "border-bottom": "1px solid #eaeaea"
+              }
             },
             [
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link active",
-                    attrs: { href: "#pill1", "data-toggle": "tab" }
-                  },
-                  [_vm._v("Alarms")]
-                )
-              ]),
+              _c("br"),
               _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link",
-                    attrs: { href: "#pill2", "data-toggle": "tab" }
-                  },
-                  [_vm._v("UAVs")]
-                )
-              ])
+              _c(
+                "ul",
+                {
+                  staticClass:
+                    "nav nav-pills nav-pills-info justify-content-center"
+                },
+                [
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link active",
+                        attrs: { href: "#pill1", "data-toggle": "tab" }
+                      },
+                      [_vm._v("Alarms")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "#pill2", "data-toggle": "tab" }
+                      },
+                      [_vm._v("UAVs")]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("br")
             ]
           ),
           _vm._v(" "),
-          _c("br")
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "col-md-8 justify-content-center",
-        staticStyle: { "border-bottom": "1px solid #eaeaea" }
-      })
-    ])
+          _c("div", {
+            staticClass: "col-md-8 justify-content-center",
+            staticStyle: { "border-bottom": "1px solid #eaeaea" }
+          })
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
