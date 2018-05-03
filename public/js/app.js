@@ -84376,21 +84376,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
         return {
             longitude: "",
             latitude: "",
-            center: {
-                lat: 10.0,
-                lng: 10.0
+            selectedAlarm: {},
+            defaultLocation: {
+                lat: 0,
+                lng: 0
             },
-            markers: [{
-                position: {
-                    lat: 10.0,
-                    lng: 10.0
-                }
-            }, {
-                position: {
-                    lat: 11.0,
-                    lng: 11.0
-                }
-            }]
+            alarms: []
         };
     },
     mounted: function mounted() {
@@ -84400,6 +84391,20 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
             _this.longitude = e.longitude;
             _this.latitude = e.latitude;
         });
+
+        axios.get("/alarms").then(function (response) {
+            _this.alarms = response.data.data;
+            _this.selectedAlarm = response.data.data[0];
+        });
+    },
+
+    methods: {
+        position: function position(alarm) {
+            return {
+                lat: alarm.latitude,
+                lng: alarm.longitude
+            };
+        }
     }
 });
 
@@ -86299,7 +86304,39 @@ var render = function() {
                   staticStyle: { height: "500px", overflow: "hidden" }
                 },
                 [
-                  _vm._m(1),
+                  _c(
+                    "div",
+                    { staticClass: "col-sm-4", attrs: { id: "cards" } },
+                    _vm._l(_vm.alarms, function(alarm) {
+                      return _c(
+                        "div",
+                        {
+                          staticClass: "card no-margin card-alarm",
+                          class: {
+                            "card-alarm-selected": _vm.selectedAlarm == alarm
+                          },
+                          on: {
+                            click: function($event) {
+                              _vm.selectedAlarm = alarm
+                            }
+                          }
+                        },
+                        [
+                          _c("div", { staticClass: "card-body" }, [
+                            _c("div", { staticClass: "stats" }, [
+                              _vm._v(
+                                "\n                                        latitude: " +
+                                  _vm._s(alarm.latitude) +
+                                  ", longitude: " +
+                                  _vm._s(alarm.longitude) +
+                                  "\n                                    "
+                              )
+                            ])
+                          ])
+                        ]
+                      )
+                    })
+                  ),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -86309,21 +86346,19 @@ var render = function() {
                         "gmap-map",
                         {
                           ref: "mmm",
-                          attrs: { center: _vm.center, zoom: 7, id: "map" }
+                          attrs: {
+                            center:
+                              _vm.selectedAlarm != null
+                                ? _vm.position(_vm.selectedAlarm)
+                                : _vm.defaultLocation,
+                            zoom: 7,
+                            id: "map"
+                          }
                         },
-                        _vm._l(_vm.markers, function(m, index) {
+                        _vm._l(_vm.alarms, function(alarm, index) {
                           return _c("gmap-marker", {
                             key: index,
-                            attrs: {
-                              position: m.position,
-                              clickable: true,
-                              draggable: true
-                            },
-                            on: {
-                              click: function($event) {
-                                _vm.center = m.position
-                              }
-                            }
+                            attrs: { position: _vm.position(alarm) }
                           })
                         })
                       )
@@ -86388,35 +86423,6 @@ var staticRenderFns = [
         })
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-4", attrs: { id: "cards" } }, [
-      _c(
-        "div",
-        {
-          staticClass: "card no-margin",
-          staticStyle: {
-            "border-left": "20px solid red",
-            "border-radius": "0px"
-          }
-        },
-        [
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "stats" }, [
-              _c("i", { staticClass: "material-icons" }, [
-                _vm._v("access_time")
-              ]),
-              _vm._v(
-                " Updated 2 minutes ago\n                                    "
-              )
-            ])
-          ])
-        ]
-      )
-    ])
   }
 ]
 render._withStripped = true
@@ -86473,7 +86479,7 @@ exports = module.exports = __webpack_require__(167)(false);
 
 
 // module
-exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea; height: 100%; overflow-y: scroll; padding: 0px !important;\n}\n", ""]);
+exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea; height: 100%; overflow-y: scroll; padding: 0px !important;\n}\n.card-alarm {\n    border-left: 20px solid red;\n    border-radius: 0px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\n.card-alarm-selected {\n    background-color: #f4f4f4;\n}\n", ""]);
 
 // exports
 

@@ -22,7 +22,7 @@ class ShowAlarmTest extends TestCase
 
         $this->signIn();
 
-        $this->get("/api/alarms")
+        $this->get("/alarms")
             ->assertStatus(401);
     }
 
@@ -33,7 +33,7 @@ class ShowAlarmTest extends TestCase
 
         $this->signInAdmin();
 
-        $this->get("/api/alarms")
+        $this->get("/alarms")
             ->assertStatus(200)
             ->assertSee($alarm->longitude);
     }

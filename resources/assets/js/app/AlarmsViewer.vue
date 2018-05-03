@@ -22,17 +22,17 @@
                     <div class="card-body no-padding">
                         <div class="row" style="height: 500px; overflow: hidden;">
                             <div class="col-sm-4" id="cards">
-                                <div class="card no-margin" style="border-left: 20px solid red; border-radius: 0px">
+                                <div class="card no-margin card-alarm" v-for="alarm in alarms" :class="{'card-alarm-selected' : selectedAlarm == alarm}" @click="selectedAlarm = alarm">
                                     <div class="card-body">
                                         <div class="stats">
-                                            <i class="material-icons">access_time</i> Updated 2 minutes ago
+                                            latitude: {{ alarm.latitude }}, longitude: {{ alarm.longitude }}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-8 no-padding-left">
-                                <gmap-map :center="center" :zoom="7" ref="mmm" id="map">
-                                    <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" :clickable="true" :draggable="true" @click="center=m.position"></gmap-marker>
+                                <gmap-map :center="selectedAlarm != null ? position(selectedAlarm) : defaultLocation" :zoom="7" ref="mmm" id="map">
+                                    <gmap-marker :key="index" v-for="(alarm, index) in alarms" :position="position(alarm)"></gmap-marker>
                                 </gmap-map>
                             </div>
                         </div>
@@ -59,21 +59,12 @@
             return {
                 longitude: "",
                 latitude: "",
-                center: {
-                    lat: 10.0,
-                    lng: 10.0
+                selectedAlarm: {},
+                defaultLocation: {
+                    lat: 0,
+                    lng: 0
                 },
-                markers: [{
-                    position: {
-                        lat: 10.0,
-                        lng: 10.0
-                    }
-                }, {
-                    position: {
-                        lat: 11.0,
-                        lng: 11.0
-                    }
-                }]
+                alarms : []
             }
         },
         mounted() {
@@ -82,6 +73,19 @@
                     this.longitude = e.longitude;
                     this.latitude = e.latitude;
                 });
+
+            axios.get("/alarms").then((response) => {
+                this.alarms = response.data.data;
+                this.selectedAlarm = response.data.data[0];
+            })
+        },
+        methods: {
+            position(alarm) {
+                return {
+                    lat: alarm.latitude,
+                    lng: alarm.longitude
+                }
+            }
         }
     }
 </script>
@@ -112,5 +116,16 @@
 
     #cards {
         border-right: 1px solid #eaeaea; height: 100%; overflow-y: scroll; padding: 0px !important;
+    }
+
+    .card-alarm {
+        border-left: 20px solid red;
+        border-radius: 0px;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+
+    .card-alarm-selected {
+        background-color: #f4f4f4;
     }
 </style>
