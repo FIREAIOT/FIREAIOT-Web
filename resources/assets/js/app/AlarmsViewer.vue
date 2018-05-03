@@ -15,7 +15,7 @@
                                 <br>
                             </div>
                             <div class="col-md-8 justify-content-center" id="details">
-
+                                longitude: {{ longitude }}, latitude: {{ latitude }}
                             </div>
                         </div>
                     </div>

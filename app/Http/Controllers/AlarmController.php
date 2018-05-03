@@ -16,7 +16,7 @@ class AlarmController extends Controller
     public function index()
     {
         return AlarmResource::collection(
-            Alarm::get()
+            Alarm::orderBy("created_at", "desc")->get()
         );
     }
 

@@ -86298,7 +86298,28 @@ var render = function() {
             staticStyle: { overflow: "hidden" }
           },
           [
-            _vm._m(0),
+            _c("div", { staticClass: "card-body no-padding" }, [
+              _c("div", { staticClass: "row" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-8 justify-content-center",
+                    attrs: { id: "details" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            longitude: " +
+                        _vm._s(_vm.longitude) +
+                        ", latitude: " +
+                        _vm._s(_vm.latitude) +
+                        "\n                        "
+                    )
+                  ]
+                )
+              ])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body no-padding" }, [
               _c(
@@ -86396,49 +86417,38 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body no-padding" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-4", attrs: { id: "tabs" } }, [
-          _c("br"),
+    return _c("div", { staticClass: "col-md-4", attrs: { id: "tabs" } }, [
+      _c("br"),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "nav nav-pills nav-pills-info justify-content-center" },
+        [
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link active",
+                attrs: { href: "#", "data-toggle": "tab" }
+              },
+              [_vm._v("Alarms")]
+            )
+          ]),
           _vm._v(" "),
-          _c(
-            "ul",
-            {
-              staticClass: "nav nav-pills nav-pills-info justify-content-center"
-            },
-            [
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link active",
-                    attrs: { href: "#", "data-toggle": "tab" }
-                  },
-                  [_vm._v("Alarms")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link",
-                    attrs: { href: "#", "data-toggle": "tab" }
-                  },
-                  [_vm._v("UAVs")]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("br")
-        ]),
-        _vm._v(" "),
-        _c("div", {
-          staticClass: "col-md-8 justify-content-center",
-          attrs: { id: "details" }
-        })
-      ])
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                attrs: { href: "#", "data-toggle": "tab" }
+              },
+              [_vm._v("UAVs")]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("br")
     ])
   }
 ]
