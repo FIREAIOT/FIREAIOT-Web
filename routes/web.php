@@ -2,6 +2,6 @@
 
 Route::get('/', 'PageController@index')->name("home.index");
 
-Route::view('/dashboard', 'dashboard.index')->middleware('admin')->name("dashboard.index");
+Route::get('/dashboard', 'DashboardController@index')->middleware('admin')->name("dashboard.index");
 
 Auth::routes();

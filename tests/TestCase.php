@@ -61,6 +61,11 @@ abstract class TestCase extends BaseTestCase
         return $this;
     }
 
+    public function signInAdmin()
+    {
+        $this->signIn(factory(\App\User::class)->create(["isAdmin" => true]));
+    }
+
     /**
      * @return array
      */

@@ -27,10 +27,18 @@ class DashboardTest extends TestCase
     /** @test */
     public function admins_can_visit_dashboard()
     {
-        $this->withExceptionHandling();
-
-        $this->signIn(factory(\App\User::class)->create(["isAdmin" => true]));
+        $this->signInAdmin();
 
         $this->get("/dashboard")->assertStatus(200);
+    }
+
+    /** @test */
+    public function an_admin_can_view_reported_alarms()
+    {
+        $alarm = factory(\App\Alarm::class)->create();
+
+        $this->signInAdmin();
+
+        $this->get("/dashboard")->assertSee($alarm->latitude)->assertSee($alarm->longitude);
     }
 }
