@@ -26,7 +26,7 @@ class AlarmReceived implements ShouldBroadcast
     public function __construct($latitude, $longitude)
     {
         $this->latitude = $latitude;
-        $this->$longitude = $longitude;
+        $this->longitude = $longitude;
     }
 
     /**
@@ -36,6 +36,6 @@ class AlarmReceived implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('alarms');
+        return new Channel('alarms');
     }
 }
