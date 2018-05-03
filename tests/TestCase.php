@@ -46,6 +46,7 @@ abstract class TestCase extends BaseTestCase
     protected function withExceptionHandling()
     {
         $this->app->instance(ExceptionHandler::class, $this->oldExceptionHandler);
+
         return $this;
     }
 
@@ -56,6 +57,7 @@ abstract class TestCase extends BaseTestCase
     protected function signIn($user = null)
     {
         $this->actingAs($user ?? factory(User::class)->create(), 'api');
+
         return $this;
     }
 

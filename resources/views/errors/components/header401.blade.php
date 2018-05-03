@@ -9,8 +9,16 @@
                     data-aos-once="true"
                     data-aos-delay="100"
                     class="txt-black-color">
-                    Page Not Found
+                    Unauthorized Action.
                 </h1>
+                <h2 data-aos="fade-up"
+                    data-aos-easing="ease-in-out"
+                    data-aos-duration="500"
+                    data-aos-once="true"
+                    data-aos-delay="100"
+                    class="txt-black-color">
+                    Only admins can view this page.
+                </h2>
                 <a data-aos="fade-up"
                    data-aos-easing="ease-in-out"
                    data-aos-duration="500"

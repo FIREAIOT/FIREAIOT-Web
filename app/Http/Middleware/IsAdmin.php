@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Validation\UnauthorizedException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 class IsAdmin
 {
@@ -21,7 +21,7 @@ class IsAdmin
         }
 
         if (! $request->user()->isAdmin) {
-            throw new UnauthorizedException("Unauthorized.", 403);
+            throw new UnauthorizedHttpException('Unauthorized.');
         }
 
         return $next($request);
