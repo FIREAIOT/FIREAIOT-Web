@@ -18,6 +18,7 @@ class CreateAlarmsTable extends Migration
             $table->integer("user_id");
             $table->string("longitude");
             $table->string("latitude");
+            $table->integer("status_id")->default(1);
             $table->timestamps();
         });
     }
