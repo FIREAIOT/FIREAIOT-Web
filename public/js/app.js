@@ -43184,8 +43184,8 @@ module.exports = __webpack_require__(259);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_AlarmsViewer_vue__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_AlarmsViewer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_AlarmsViewer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_Dashboard_vue__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_Dashboard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_Dashboard_vue__);
 __webpack_require__(173);
 
 window.Vue = __webpack_require__(165);
@@ -43195,7 +43195,7 @@ window.Vue = __webpack_require__(165);
 var app = new Vue({
     el: '#app',
     components: {
-        alarmsViewer: __WEBPACK_IMPORTED_MODULE_0__app_AlarmsViewer_vue___default.a
+        dashboard: __WEBPACK_IMPORTED_MODULE_0__app_Dashboard_vue___default.a
     }
 });
 
@@ -84255,167 +84255,8 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(24)))
 
 /***/ }),
-/* 226 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(264)
-}
-var normalizeComponent = __webpack_require__(11)
-/* script */
-var __vue_script__ = __webpack_require__(227)
-/* template */
-var __vue_template__ = __webpack_require__(258)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/app/AlarmsViewer.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-a2bfdd18", Component.options)
-  } else {
-    hotAPI.reload("data-v-a2bfdd18", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 227 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__, {
-    load: {
-        key: 'AIzaSyDiF33NhMowopn9uwf2SFuUaB8eL8_k_Po', //The api key is restricted don't play dude :D
-        libraries: 'drawing'
-    }
-});
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            longitude: "",
-            latitude: "",
-            selectedAlarm: {},
-            defaultLocation: {
-                lat: 0,
-                lng: 0
-            },
-            alarms: [],
-            openedTab: "Alarms"
-        };
-    },
-    mounted: function mounted() {
-        var _this = this;
-
-        Echo.channel('alarms').listen('AlarmReceived', function (e) {
-            _this.longitude = e.longitude;
-            _this.latitude = e.latitude;
-        });
-
-        axios.get("/alarms").then(function (response) {
-            _this.alarms = response.data.data;
-            _this.selectedAlarm = response.data.data[0];
-        });
-    },
-
-    methods: {
-        position: function position(alarm) {
-            return {
-                lat: alarm.latitude,
-                lng: alarm.longitude
-            };
-        }
-    }
-});
-
-/***/ }),
+/* 226 */,
+/* 227 */,
 /* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -86282,7 +86123,238 @@ if (false) {
 }
 
 /***/ }),
-/* 258 */
+/* 258 */,
+/* 259 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(267)
+}
+var normalizeComponent = __webpack_require__(11)
+/* script */
+var __vue_script__ = __webpack_require__(269)
+/* template */
+var __vue_template__ = __webpack_require__(270)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/app/Dashboard.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-51898f78", Component.options)
+  } else {
+    hotAPI.reload("data-v-51898f78", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(268);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(168)("1f547324", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51898f78\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Dashboard.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51898f78\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Dashboard.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(167)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea;\n    height: 100%;\n    overflow-y: scroll;\n    padding: 0px !important;\n}\n.card-alarm {\n    border-radius: 0px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\n.card-alarm.pending {\n    border-left: 20px solid #e74c3c;\n}\n.card-alarm.inProgress {\n    border-left: 20px solid #3498db;\n}\n.card-alarm.completed {\n    border-left: 20px solid #27ae60;\n}\n.card-alarm-selected {\n    background-color: #f4f4f4;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 269 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__, {
+    load: {
+        key: 'AIzaSyDiF33NhMowopn9uwf2SFuUaB8eL8_k_Po', //The api key is restricted don't play dude :D
+        libraries: 'drawing'
+    }
+});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            longitude: "",
+            latitude: "",
+            selectedAlarm: {},
+            defaultLocation: {
+                lat: 0,
+                lng: 0
+            },
+            alarms: [],
+            uavs: [],
+            openedTab: "Alarms"
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        Echo.channel('alarms').listen('AlarmReceived', function (e) {
+            _this.longitude = e.longitude;
+            _this.latitude = e.latitude;
+        });
+
+        axios.get("/alarms").then(function (response) {
+            _this.alarms = response.data.data;
+            _this.selectedAlarm = response.data.data[0];
+        });
+
+        axios.get("/uavs").then(function (response) {
+            _this.uavs = response.data.data;
+        });
+    },
+
+    methods: {
+        position: function position(alarm) {
+            return {
+                lat: alarm.latitude,
+                lng: alarm.longitude
+            };
+        }
+    }
+});
+
+/***/ }),
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -86383,58 +86455,103 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "col-sm-4", attrs: { id: "cards" } },
-                    _vm._l(_vm.alarms, function(alarm) {
-                      return _vm.openedTab == "Alarms"
-                        ? _c(
-                            "div",
-                            {
-                              staticClass: "card no-margin card-alarm",
-                              class: [
-                                {
-                                  "card-alarm-selected":
-                                    _vm.selectedAlarm == alarm
-                                },
-                                alarm.status
-                              ],
-                              on: {
-                                click: function($event) {
-                                  _vm.selectedAlarm = alarm
+                    [
+                      _vm._l(_vm.alarms, function(alarm) {
+                        return _vm.openedTab == "Alarms"
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "card no-margin card-alarm",
+                                class: [
+                                  {
+                                    "card-alarm-selected":
+                                      _vm.selectedAlarm == alarm
+                                  },
+                                  alarm.status
+                                ],
+                                on: {
+                                  click: function($event) {
+                                    _vm.selectedAlarm = alarm
+                                  }
                                 }
-                              }
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "card-body text-left" },
-                                [
-                                  _c("p", [
-                                    _c("b", [_vm._v("Latitude:")]),
-                                    _vm._v(" " + _vm._s(alarm.latitude))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _c("b", [_vm._v("Longitude:")]),
-                                    _vm._v(" " + _vm._s(alarm.longitude))
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  { staticClass: "card-body text-left" },
+                                  [
+                                    _c("p", [
+                                      _c("b", [_vm._v("Latitude:")]),
+                                      _vm._v(" " + _vm._s(alarm.latitude))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _c("b", [_vm._v("Longitude:")]),
+                                      _vm._v(" " + _vm._s(alarm.longitude))
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "card-footer" }, [
+                                  _c("div", { staticClass: "stats" }, [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("access_time")
+                                    ]),
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(alarm.createdAt) +
+                                        "\n                                    "
+                                    )
                                   ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "card-footer" }, [
-                                _c("div", { staticClass: "stats" }, [
-                                  _c("i", { staticClass: "material-icons" }, [
-                                    _vm._v("access_time")
-                                  ]),
-                                  _vm._v(
-                                    " " +
-                                      _vm._s(alarm.createdAt) +
-                                      "\n                                    "
-                                  )
                                 ])
-                              ])
-                            ]
-                          )
-                        : _vm._e()
-                    })
+                              ]
+                            )
+                          : _vm._e()
+                      }),
+                      _vm._v(" "),
+                      _vm._l(_vm.uavs, function(uav) {
+                        return _vm.openedTab == "UAVs"
+                          ? _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "card no-margin card-alarm completed"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  { staticClass: "card-body text-left" },
+                                  [
+                                    _c("p", [
+                                      _c("b", [_vm._v("Latitude:")]),
+                                      _vm._v(" " + _vm._s(uav.latitude))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _c("b", [_vm._v("Longitude:")]),
+                                      _vm._v(" " + _vm._s(uav.longitude))
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "card-footer" }, [
+                                  _c("div", { staticClass: "stats" }, [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("access_time")
+                                    ]),
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(uav.createdAt) +
+                                        "\n                                    "
+                                    )
+                                  ])
+                                ])
+                              ]
+                            )
+                          : _vm._e()
+                      })
+                    ],
+                    2
                   ),
                   _vm._v(" "),
                   _c(
@@ -86479,59 +86596,9 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-a2bfdd18", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-51898f78", module.exports)
   }
 }
-
-/***/ }),
-/* 259 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(265);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(168)("60e1798e", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a2bfdd18\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AlarmsViewer.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a2bfdd18\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AlarmsViewer.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 265 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(167)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea;\n    height: 100%;\n    overflow-y: scroll;\n    padding: 0px !important;\n}\n.card-alarm {\n    border-radius: 0px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\n.card-alarm.pending {\n    border-left: 20px solid #e74c3c;\n}\n.card-alarm.inProgress {\n    border-left: 20px solid #3498db;\n}\n.card-alarm.completed {\n    border-left: 20px solid #27ae60;\n}\n.card-alarm-selected {\n    background-color: #f4f4f4;\n}\n", ""]);
-
-// exports
-
 
 /***/ })
 /******/ ]);

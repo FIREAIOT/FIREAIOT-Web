@@ -4,5 +4,5 @@
 
 @section('content')
     @include("shared.navbar")
-    <alarms-viewer></alarms-viewer>
+    <dashboard></dashboard>
 @endsection

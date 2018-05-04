@@ -35,6 +35,18 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="card no-margin card-alarm completed" v-if="openedTab == 'UAVs'" v-for="uav in uavs">
+                                    <div class="card-body text-left">
+                                        <p><b>Latitude:</b> {{ uav.latitude }}</p>
+                                        <p><b>Longitude:</b> {{ uav.longitude }}</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="stats">
+                                            <i class="material-icons">access_time</i> {{ uav.createdAt }}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-sm-8 no-padding-left">
                                 <gmap-map :center="selectedAlarm != null ? position(selectedAlarm) : defaultLocation" :zoom="13" ref="mmm" id="map">
@@ -63,14 +75,15 @@
     export default {
         data() {
             return {
-                longitude: "",
-                latitude: "",
-                selectedAlarm: {},
-                defaultLocation: {
-                    lat: 0,
-                    lng: 0
+                longitude       : "",
+                latitude        : "",
+                selectedAlarm   : {},
+                defaultLocation : {
+                    lat : 0,
+                    lng : 0
                 },
-                alarms : [],
+                alarms    : [],
+                uavs      : [],
                 openedTab : "Alarms"
             }
         },
@@ -84,7 +97,11 @@
             axios.get("/alarms").then((response) => {
                 this.alarms = response.data.data;
                 this.selectedAlarm = response.data.data[0];
-            })
+            });
+
+            axios.get("/uavs").then((response) => {
+                this.uavs = response.data.data;
+            });
         },
         methods: {
             position(alarm) {
