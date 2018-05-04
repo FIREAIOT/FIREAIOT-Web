@@ -21,7 +21,7 @@ class CreateUAVsTable extends Migration
             $table->boolean('isReady')->default(false);
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();;
-            $table->string('attitude')->nullable();;
+            $table->string('altitude')->nullable();;
             $table->string('home_latitude')->nullable();;
             $table->string('home_longitude')->nullable();;
             $table->timestamps();

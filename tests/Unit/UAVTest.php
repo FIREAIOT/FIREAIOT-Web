@@ -48,11 +48,11 @@ class UAVTest extends TestCase
     }
 
     /** @test */
-    public function uav_should_have_current_attitude_field()
+    public function uav_should_have_current_altitude_field()
     {
-        $this->uav = factory(UAV::class)->create(["attitude" => 10]);
+        $this->uav = factory(UAV::class)->create(["altitude" => 10]);
 
-        $this->assertEquals($this->uav->attitude, 10);
+        $this->assertEquals($this->uav->altitude, 10);
     }
 
     /** @test */
