@@ -15,16 +15,20 @@
                                 <br>
                             </div>
                             <div class="col-md-8 justify-content-center" id="details">
-                                <br>
-                                <p>New Alarm</p>
-                                Longitude: {{ longitude }}, Latitude: {{ latitude }}
+                                <div v-if="openedTab == 'Alarms'">
+                                    blo blo
+                                </div>
+
+                                <div v-if="openedTab == 'UAVs'">
+                                    bla bla
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-body no-padding">
                         <div class="row" style="height: 500px; overflow: hidden;">
                             <div class="col-sm-4" id="cards">
-                                <div class="card no-margin card-alarm" v-if="openedTab == 'Alarms'" v-for="alarm in alarms" :class="[{'card-alarm-selected' : selectedAlarm == alarm}, alarm.status]" @click="selectedAlarm = alarm">
+                                <div class="card no-margin card-alarm" v-if="openedTab == 'Alarms'" v-for="alarm in alarms" :class="[{'card-selected' : selectedAlarm == alarm}, alarm.status]" @click="selectedAlarm = alarm">
                                     <div class="card-body text-left">
                                         <p><b>Latitude:</b> {{ alarm.latitude }}</p>
                                         <p><b>Longitude:</b> {{ alarm.longitude }}</p>
@@ -36,7 +40,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card no-margin card-alarm completed" v-if="openedTab == 'UAVs'" v-for="uav in uavs">
+                                <div class="card no-margin card-alarm" v-if="openedTab == 'UAVs'" v-for="uav in uavs" :class="[{'card-selected' : selectedUAV == uav}, uav.isReady ? 'completed' : 'pending']" @click="selectedUAV = uav">
                                     <div class="card-body text-left">
                                         <p><b>Latitude:</b> {{ uav.latitude }}</p>
                                         <p><b>Longitude:</b> {{ uav.longitude }}</p>
@@ -75,16 +79,17 @@
     export default {
         data() {
             return {
-                longitude       : "",
-                latitude        : "",
-                selectedAlarm   : {},
+                openedTab : "Alarms",
                 defaultLocation : {
                     lat : 0,
                     lng : 0
                 },
                 alarms    : [],
                 uavs      : [],
-                openedTab : "Alarms"
+                longitude     : "",
+                latitude      : "",
+                selectedAlarm : {},
+                selectedUAV   : {},
             }
         },
         mounted() {
@@ -101,6 +106,7 @@
 
             axios.get("/uavs").then((response) => {
                 this.uavs = response.data.data;
+                this.selectedUAV = response.data.data[0];
             });
         },
         methods: {
@@ -163,7 +169,7 @@
         border-left: 20px solid #27ae60;
     }
 
-    .card-alarm-selected {
+    .card-selected {
         background-color: #f4f4f4;
     }
 </style>

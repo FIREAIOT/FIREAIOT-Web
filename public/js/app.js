@@ -86221,7 +86221,7 @@ exports = module.exports = __webpack_require__(167)(false);
 
 
 // module
-exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea;\n    height: 100%;\n    overflow-y: scroll;\n    padding: 0px !important;\n}\n.card-alarm {\n    border-radius: 0px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\n.card-alarm.pending {\n    border-left: 20px solid #e74c3c;\n}\n.card-alarm.inProgress {\n    border-left: 20px solid #3498db;\n}\n.card-alarm.completed {\n    border-left: 20px solid #27ae60;\n}\n.card-alarm-selected {\n    background-color: #f4f4f4;\n}\n", ""]);
+exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea;\n    height: 100%;\n    overflow-y: scroll;\n    padding: 0px !important;\n}\n.card-alarm {\n    border-radius: 0px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\n.card-alarm.pending {\n    border-left: 20px solid #e74c3c;\n}\n.card-alarm.inProgress {\n    border-left: 20px solid #3498db;\n}\n.card-alarm.completed {\n    border-left: 20px solid #27ae60;\n}\n.card-selected {\n    background-color: #f4f4f4;\n}\n", ""]);
 
 // exports
 
@@ -86299,6 +86299,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -86313,16 +86317,17 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            longitude: "",
-            latitude: "",
-            selectedAlarm: {},
+            openedTab: "Alarms",
             defaultLocation: {
                 lat: 0,
                 lng: 0
             },
             alarms: [],
             uavs: [],
-            openedTab: "Alarms"
+            longitude: "",
+            latitude: "",
+            selectedAlarm: {},
+            selectedUAV: {}
         };
     },
     mounted: function mounted() {
@@ -86340,6 +86345,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
 
         axios.get("/uavs").then(function (response) {
             _this.uavs = response.data.data;
+            _this.selectedUAV = response.data.data[0];
         });
     },
 
@@ -86429,16 +86435,21 @@ var render = function() {
                     attrs: { id: "details" }
                   },
                   [
-                    _c("br"),
+                    _vm.openedTab == "Alarms"
+                      ? _c("div", [
+                          _vm._v(
+                            "\n                                blo blo\n                            "
+                          )
+                        ])
+                      : _vm._e(),
                     _vm._v(" "),
-                    _c("p", [_vm._v("New Alarm")]),
-                    _vm._v(
-                      "\n                            Longitude: " +
-                        _vm._s(_vm.longitude) +
-                        ", Latitude: " +
-                        _vm._s(_vm.latitude) +
-                        "\n                        "
-                    )
+                    _vm.openedTab == "UAVs"
+                      ? _c("div", [
+                          _vm._v(
+                            "\n                                bla bla\n                            "
+                          )
+                        ])
+                      : _vm._e()
                   ]
                 )
               ])
@@ -86464,8 +86475,7 @@ var render = function() {
                                 staticClass: "card no-margin card-alarm",
                                 class: [
                                   {
-                                    "card-alarm-selected":
-                                      _vm.selectedAlarm == alarm
+                                    "card-selected": _vm.selectedAlarm == alarm
                                   },
                                   alarm.status
                                 ],
@@ -86514,8 +86524,16 @@ var render = function() {
                           ? _c(
                               "div",
                               {
-                                staticClass:
-                                  "card no-margin card-alarm completed"
+                                staticClass: "card no-margin card-alarm",
+                                class: [
+                                  { "card-selected": _vm.selectedUAV == uav },
+                                  uav.isReady ? "completed" : "pending"
+                                ],
+                                on: {
+                                  click: function($event) {
+                                    _vm.selectedUAV = uav
+                                  }
+                                }
                               },
                               [
                                 _c(

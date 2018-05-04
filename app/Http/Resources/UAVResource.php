@@ -15,12 +15,17 @@ class UAVResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"            => "sgkjsgsgiu4ksgkjhsg",
-            "battery"       => 100,
-            "location"      => [
-                "latitude"  => 0.0,
-                "longitude" => 0.0
-            ]
+            "ip"            => $this->ip,
+            "uuid"          => $this->uuid,
+            "battery"       => $this->battery,
+            "isReady"       => $this->isReady,
+            "latitude"      => $this->latitude,
+            "longitude"     => $this->longitude,
+            "altitude"      => $this->altitude,
+            "homeLatitude"  => $this->altitude,
+            "homeLongitude" => $this->altitude,
+            "createdAt"     => $this->created_at->diffForHumans(),
+            "updatedAt"     => $this->updated_at->diffForHumans()
         ];
     }
 }
