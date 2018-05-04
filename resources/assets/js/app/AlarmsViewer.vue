@@ -9,8 +9,8 @@
                             <div class="col-md-4" id="tabs">
                                 <br>
                                 <ul class="nav nav-pills nav-pills-info justify-content-center">
-                                    <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab">Alarms</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">UAVs</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#" @click="openedTab = 'Alarms'" data-toggle="tab">Alarms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#" @click="openedTab = 'UAVs'" data-toggle="tab">UAVs</a></li>
                                 </ul>
                                 <br>
                             </div>
@@ -24,7 +24,7 @@
                     <div class="card-body no-padding">
                         <div class="row" style="height: 500px; overflow: hidden;">
                             <div class="col-sm-4" id="cards">
-                                <div class="card no-margin card-alarm" v-for="alarm in alarms" :class="{'card-alarm-selected' : selectedAlarm == alarm}" @click="selectedAlarm = alarm">
+                                <div class="card no-margin card-alarm" v-if="openedTab == 'Alarms'" v-for="alarm in alarms" :class="{'card-alarm-selected' : selectedAlarm == alarm}" @click="selectedAlarm = alarm">
                                     <div class="card-body text-left">
                                         <p><b>Latitude:</b> {{ alarm.latitude }}</p>
                                         <p><b>Longitude:</b> {{ alarm.longitude }}</p>
@@ -70,7 +70,8 @@
                     lat: 0,
                     lng: 0
                 },
-                alarms : []
+                alarms : [],
+                openedTab : "Alarms"
             }
         },
         mounted() {

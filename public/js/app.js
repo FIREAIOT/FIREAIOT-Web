@@ -84387,7 +84387,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
                 lat: 0,
                 lng: 0
             },
-            alarms: []
+            alarms: [],
+            openedTab: "Alarms"
         };
     },
     mounted: function mounted() {
@@ -86302,7 +86303,52 @@ var render = function() {
           [
             _c("div", { staticClass: "card-body no-padding" }, [
               _c("div", { staticClass: "row" }, [
-                _vm._m(0),
+                _c("div", { staticClass: "col-md-4", attrs: { id: "tabs" } }, [
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "nav nav-pills nav-pills-info justify-content-center"
+                    },
+                    [
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link active",
+                            attrs: { href: "#", "data-toggle": "tab" },
+                            on: {
+                              click: function($event) {
+                                _vm.openedTab = "Alarms"
+                              }
+                            }
+                          },
+                          [_vm._v("Alarms")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: { href: "#", "data-toggle": "tab" },
+                            on: {
+                              click: function($event) {
+                                _vm.openedTab = "UAVs"
+                              }
+                            }
+                          },
+                          [_vm._v("UAVs")]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("br")
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -86338,46 +86384,53 @@ var render = function() {
                     "div",
                     { staticClass: "col-sm-4", attrs: { id: "cards" } },
                     _vm._l(_vm.alarms, function(alarm) {
-                      return _c(
-                        "div",
-                        {
-                          staticClass: "card no-margin card-alarm",
-                          class: {
-                            "card-alarm-selected": _vm.selectedAlarm == alarm
-                          },
-                          on: {
-                            click: function($event) {
-                              _vm.selectedAlarm = alarm
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "card-body text-left" }, [
-                            _c("p", [
-                              _c("b", [_vm._v("Latitude:")]),
-                              _vm._v(" " + _vm._s(alarm.latitude))
-                            ]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _c("b", [_vm._v("Longitude:")]),
-                              _vm._v(" " + _vm._s(alarm.longitude))
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "card-footer" }, [
-                            _c("div", { staticClass: "stats" }, [
-                              _c("i", { staticClass: "material-icons" }, [
-                                _vm._v("access_time")
-                              ]),
-                              _vm._v(
-                                " " +
-                                  _vm._s(alarm.createdAt) +
-                                  "\n                                    "
-                              )
-                            ])
-                          ])
-                        ]
-                      )
+                      return _vm.openedTab == "Alarms"
+                        ? _c(
+                            "div",
+                            {
+                              staticClass: "card no-margin card-alarm",
+                              class: {
+                                "card-alarm-selected":
+                                  _vm.selectedAlarm == alarm
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.selectedAlarm = alarm
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "card-body text-left" },
+                                [
+                                  _c("p", [
+                                    _c("b", [_vm._v("Latitude:")]),
+                                    _vm._v(" " + _vm._s(alarm.latitude))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _c("b", [_vm._v("Longitude:")]),
+                                    _vm._v(" " + _vm._s(alarm.longitude))
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "card-footer" }, [
+                                _c("div", { staticClass: "stats" }, [
+                                  _c("i", { staticClass: "material-icons" }, [
+                                    _vm._v("access_time")
+                                  ]),
+                                  _vm._v(
+                                    " " +
+                                      _vm._s(alarm.createdAt) +
+                                      "\n                                    "
+                                  )
+                                ])
+                              ])
+                            ]
+                          )
+                        : _vm._e()
                     })
                   ),
                   _vm._v(" "),
@@ -86417,46 +86470,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4", attrs: { id: "tabs" } }, [
-      _c("br"),
-      _vm._v(" "),
-      _c(
-        "ul",
-        { staticClass: "nav nav-pills nav-pills-info justify-content-center" },
-        [
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link active",
-                attrs: { href: "#", "data-toggle": "tab" }
-              },
-              [_vm._v("Alarms")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                attrs: { href: "#", "data-toggle": "tab" }
-              },
-              [_vm._v("UAVs")]
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("br")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
