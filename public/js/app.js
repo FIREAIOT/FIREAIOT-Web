@@ -86389,10 +86389,13 @@ var render = function() {
                             "div",
                             {
                               staticClass: "card no-margin card-alarm",
-                              class: {
-                                "card-alarm-selected":
-                                  _vm.selectedAlarm == alarm
-                              },
+                              class: [
+                                {
+                                  "card-alarm-selected":
+                                    _vm.selectedAlarm == alarm
+                                },
+                                alarm.status
+                              ],
                               on: {
                                 click: function($event) {
                                   _vm.selectedAlarm = alarm
@@ -86525,7 +86528,7 @@ exports = module.exports = __webpack_require__(167)(false);
 
 
 // module
-exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea; height: 100%; overflow-y: scroll; padding: 0px !important;\n}\n.card-alarm {\n    border-left: 20px solid red;\n    border-radius: 0px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\n.card-alarm-selected {\n    background-color: #f4f4f4;\n}\n", ""]);
+exports.push([module.i, "\n.no-padding {\n    padding: 0px !important;\n}\n.no-padding-left {\n    padding-left: 0px !important;\n}\n#tabs {\n    border-right: 1px solid #eaeaea;\n    border-bottom: 1px solid #eaeaea;\n}\n#details {\n    border-bottom: 1px solid #eaeaea;\n}\n#map {\n    width: 100%; height: 500px;\n    margin: 0px;\n}\n#cards {\n    border-right: 1px solid #eaeaea;\n    height: 100%;\n    overflow-y: scroll;\n    padding: 0px !important;\n}\n.card-alarm {\n    border-radius: 0px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\n.card-alarm.pending {\n    border-left: 20px solid #e74c3c;\n}\n.card-alarm.inProgress {\n    border-left: 20px solid #3498db;\n}\n.card-alarm.completed {\n    border-left: 20px solid #27ae60;\n}\n.card-alarm-selected {\n    background-color: #f4f4f4;\n}\n", ""]);
 
 // exports
 

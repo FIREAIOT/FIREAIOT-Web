@@ -21,6 +21,8 @@ class StoreAlarmTest extends TestCase
     /** @test */
     public function authorized_users_can_report_fire_alarms()
     {
+        Event::fake();
+
         $this->signIn();
 
         $response = $this->json("POST", "/api/alarms", [

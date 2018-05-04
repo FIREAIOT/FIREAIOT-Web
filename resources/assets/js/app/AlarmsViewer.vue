@@ -24,7 +24,7 @@
                     <div class="card-body no-padding">
                         <div class="row" style="height: 500px; overflow: hidden;">
                             <div class="col-sm-4" id="cards">
-                                <div class="card no-margin card-alarm" v-if="openedTab == 'Alarms'" v-for="alarm in alarms" :class="{'card-alarm-selected' : selectedAlarm == alarm}" @click="selectedAlarm = alarm">
+                                <div class="card no-margin card-alarm" v-if="openedTab == 'Alarms'" v-for="alarm in alarms" :class="[{'card-alarm-selected' : selectedAlarm == alarm}, alarm.status]" @click="selectedAlarm = alarm">
                                     <div class="card-body text-left">
                                         <p><b>Latitude:</b> {{ alarm.latitude }}</p>
                                         <p><b>Longitude:</b> {{ alarm.longitude }}</p>
@@ -122,14 +122,28 @@
     }
 
     #cards {
-        border-right: 1px solid #eaeaea; height: 100%; overflow-y: scroll; padding: 0px !important;
+        border-right: 1px solid #eaeaea;
+        height: 100%;
+        overflow-y: scroll;
+        padding: 0px !important;
     }
 
     .card-alarm {
-        border-left: 20px solid red;
         border-radius: 0px;
         cursor: pointer;
         margin-bottom: 5px;
+    }
+
+    .card-alarm.pending {
+        border-left: 20px solid #e74c3c;
+    }
+
+    .card-alarm.inProgress {
+        border-left: 20px solid #3498db;
+    }
+
+    .card-alarm.completed {
+        border-left: 20px solid #27ae60;
     }
 
     .card-alarm-selected {
