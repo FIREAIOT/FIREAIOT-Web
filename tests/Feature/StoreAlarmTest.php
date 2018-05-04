@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Events\AlarmReceived;
 use Tests\TestCase;
+use App\Events\AlarmReceived;
 use Illuminate\Support\Facades\Event;
 
 class StoreAlarmTest extends TestCase
