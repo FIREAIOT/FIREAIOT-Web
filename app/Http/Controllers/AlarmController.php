@@ -36,38 +36,4 @@ class AlarmController extends Controller
 
         return response()->json("okay", 201);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Alarm  $alarm
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Alarm $alarm)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Alarm  $alarm
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Alarm $alarm)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Alarm  $alarm
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Alarm $alarm)
-    {
-        //
-    }
 }
