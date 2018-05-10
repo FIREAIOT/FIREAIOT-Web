@@ -14,13 +14,46 @@
                                 </ul>
                                 <br>
                             </div>
-                            <div class="col-md-8 justify-content-center" id="details">
-                                <div v-if="openedTab == 'Alarms'">
-                                    blo blo
+                            <div class="col-md-8" id="details" >
+                                <div v-if="openedTab == 'Alarms'" style="display: flex; align-items: center; height: 100%; width: 100%">
+                                    <div class="row" style="width: 100%">
+                                        <div class="col-md-6" style="display: flex; align-items: center; justify-content: center">
+                                            <i class="material-icons">account_circle</i> {{ selectedAlarm.user }}
+                                        </div>
+                                        <div class="col-md-6" style="display: flex; align-items: center; justify-content: center">
+                                            <i class="material-icons">notification_important</i> {{ selectedAlarm.status }}
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div v-if="openedTab == 'UAVs'">
-                                    bla bla
+                                <div v-if="openedTab == 'UAVs'" style="display: flex; align-items: center; flex-direction: column; height: 100%; width: 100%">
+                                    <div class="row" style="display: flex; align-items: center; width: 100%; margin-top: 10px">
+                                        <div class="col-md-2" style="display: flex; align-items: center;"></div>
+                                        <div class="col-md-3" style="display: flex; align-items: center;">
+                                            <i class="material-icons">build</i> {{ selectedUAV.isReady ? 'Ready' : 'Not Ready' }}
+                                        </div>
+                                        <div class="col-md-3" style="display: flex; align-items: center;">
+                                            <i class="material-icons">battery_full</i> {{ selectedUAV.battery }}%
+                                        </div>
+                                        <div class="col-md-3" style="display: flex; align-items: center;">
+                                            <i class="material-icons">airplanemode_active</i> {{ selectedUAV.altitude }}
+                                        </div>
+                                        <div class="col-md-1" style="display: flex; align-items: center;"></div>
+                                    </div>
+                                    <br>
+                                    <div class="row" style="width: 100%">
+                                        <div class="col-md-2" style="display: flex; align-items: center;"></div>
+                                        <div class="col-md-3" style="display: flex; align-items: center;">
+                                            <i class="material-icons">place</i> {{ selectedUAV.latitude }}
+                                        </div>
+                                        <div class="col-md-3" style="display: flex; align-items: center;">
+                                            <i class="material-icons">place</i> {{ selectedUAV.longitude }}
+                                        </div>
+                                        <div class="col-md-3" style="display: flex; align-items: center;">
+                                            <i class="material-icons">history</i> {{ selectedUAV.updatedAt }}
+                                        </div>
+                                        <div class="col-md-1" style="display: flex; align-items: center;"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -53,8 +86,12 @@
                                 </div>
                             </div>
                             <div class="col-sm-8 no-padding-left">
-                                <gmap-map :center="selectedAlarm != null ? position(selectedAlarm) : defaultLocation" :zoom="13" ref="mmm" id="map">
+                                <gmap-map v-if="openedTab == 'Alarms'" :center="selectedAlarm != null ? position(selectedAlarm) : defaultLocation" :zoom="13" ref="mmm" id="map">
                                     <gmap-marker :key="index" v-for="(alarm, index) in alarms" :position="position(alarm)"></gmap-marker>
+                                </gmap-map>
+
+                                <gmap-map v-if="openedTab == 'UAVs'" :center="selectedUAV != null ? position(selectedUAV) : defaultLocation" :zoom="13" ref="mmm" id="map">
+                                    <gmap-marker :key="index" v-for="(uav, index) in uavs" :position="position(uav)"></gmap-marker>
                                 </gmap-map>
                             </div>
                         </div>
@@ -110,10 +147,10 @@
             });
         },
         methods: {
-            position(alarm) {
+            position(item) {
                 return {
-                    lat: alarm.latitude,
-                    lng: alarm.longitude
+                    lat: item.latitude,
+                    lng: item.longitude
                 }
             }
         }

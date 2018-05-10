@@ -10,4 +10,12 @@ class UAV extends Model
      * @var string
      */
     protected $table = 'uavs';
+
+    /**
+     * @var array
+     */
+    protected $casts = [
+        "longitude" => "double",
+        "latitude"  => "double",
+    ];
 }

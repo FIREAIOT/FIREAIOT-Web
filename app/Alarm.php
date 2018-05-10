@@ -18,6 +18,7 @@ class Alarm extends Model
         "longitude" => "double",
         "latitude"  => "double",
     ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
