@@ -7,3 +7,5 @@ Route::get("/alarms", "AlarmController@index")->middleware(["auth", "admin"]);
 Route::get("/uavs", "UAVController@index")->middleware(["auth", "admin"]);
 
 Auth::routes();
+
+Route::redirect("/register", "/")
