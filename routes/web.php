@@ -8,4 +8,4 @@ Route::get("/uavs", "UAVController@index")->middleware(["auth", "admin"]);
 
 Auth::routes();
 
-Route::redirect("/register", "/")
+Route::redirect("/register", "/");
