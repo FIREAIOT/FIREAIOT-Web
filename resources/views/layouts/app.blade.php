@@ -6,8 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'BianryTorch') }} @yield('title')</title>
-        <meta name="description" content="@yield('description', 'We offer various high-quality software services as well as modern solutions which address real-life issues in many industries.')">
+        <title>{{ config('app.name', 'FIREAIOT') }} @yield('title')</title>
+        <meta name="description" content="@yield('description', 'Autonomous IoT-based Firefighting UAV Ecosystem')">
         <meta name="keywords" content="@yield('keywords', 'Binary Torch, Engineering, IT, software, machine vision, image processing, Robotics')">
         <!-- Styles -->
         <link href="{{ asset('css/pace.css') }}" rel="stylesheet">
