@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Alarm;
+use App\Status;
 use App\Events\AlarmReceived;
 use App\Events\ActionRequired;
 use App\Http\Resources\AlarmResource;
 use App\Http\Requests\StoreAlarmRequest;
+use App\Http\Requests\UpdateAlarmRequest;
 
 class AlarmController extends Controller
 {
@@ -42,5 +44,20 @@ class AlarmController extends Controller
         ]));
 
         return response()->json("okay", 201);
+    }
+
+    /**
+     * Update the current status of an alarm.
+     *
+     * @param UpdateAlarmRequest $request
+     */
+    public function update(UpdateAlarmRequest $request)
+    {
+        $status = Status::where("name", $request->status)->first();
+        $alarm  = Alarm::where("id", $request->alarm_id)->first();
+
+        $alarm->update([
+            "status_id" => $status->id
+        ]);
     }
 }
