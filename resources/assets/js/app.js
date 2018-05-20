@@ -1,6 +1,9 @@
 require('./bootstrap');
+import Snotify from 'vue-snotify';
 
 window.Vue = require('vue');
+
+Vue.use(Snotify);
 
 import dashboard from './app/Dashboard.vue'
 

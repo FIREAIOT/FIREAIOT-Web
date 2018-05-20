@@ -145,6 +145,8 @@
                 this.uavs = response.data.data;
                 this.selectedUAV = response.data.data[0];
             });
+
+            vm.$snotify.success('Example body content');
         },
         methods: {
             position(item) {
