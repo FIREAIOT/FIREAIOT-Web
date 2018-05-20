@@ -13,15 +13,18 @@ class ActionRequired implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $action;
+    public $payload;
 
     /**
      * Create a new event instance.
      *
      * @param $action
+     * @param $payload
      */
-    public function __construct($action)
+    public function __construct($action, $payload)
     {
-        $this->action = $action;
+        $this->action  = $action;
+        $this->payload = $payload;
     }
 
     /**
