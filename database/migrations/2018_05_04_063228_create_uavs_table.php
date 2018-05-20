@@ -20,10 +20,10 @@ class CreateUAVsTable extends Migration
             $table->integer('battery')->nullable();
             $table->boolean('isReady')->default(false);
             $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();;
-            $table->string('altitude')->nullable();;
-            $table->string('home_latitude')->nullable();;
-            $table->string('home_longitude')->nullable();;
+            $table->string('longitude')->nullable();
+            $table->string('altitude')->nullable();
+            $table->string('home_latitude')->nullable();
+            $table->string('home_longitude')->nullable();
             $table->timestamps();
         });
     }
