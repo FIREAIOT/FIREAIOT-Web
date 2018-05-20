@@ -30,7 +30,6 @@
     <body class="landing-page">
         <div id="app" style="overflow-x: hidden; position: relative">
             @yield('content')
-            <vue-snotify></vue-snotify>
         </div>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
