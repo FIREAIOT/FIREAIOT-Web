@@ -84521,6 +84521,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
         var _this = this;
 
         Echo.channel('UAVs').listen('UAVLocationUpdated', function (e) {
+            console.log(e);
             _this.uavs.map(function (uav) {
                 return uav.id == e.uav.id ? uav = e.uav : null;
             });

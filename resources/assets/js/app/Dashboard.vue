@@ -130,6 +130,7 @@
         mounted() {
             Echo.channel('UAVs')
                 .listen('UAVLocationUpdated', (e) => {
+                    console.log(e);
                     this.uavs.map((uav) => uav.id == e.uav.id ? uav = e.uav: null);
                 });
 
