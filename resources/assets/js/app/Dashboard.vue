@@ -135,6 +135,8 @@
                         if (uav.id == e.uav.id){
                             uav.latitude  = e.uav.latitude;
                             uav.longitude = e.uav.longitude;
+                            this.selectedUAV.latitude  = e.uav.latitude;
+                            this.selectedUAV.longitude = e.uav.longitude;
                         }
                     });
                 });

@@ -84526,6 +84526,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
                 if (uav.id == e.uav.id) {
                     uav.latitude = e.uav.latitude;
                     uav.longitude = e.uav.longitude;
+                    _this.selectedUAV.latitude = e.uav.latitude;
+                    _this.selectedUAV.longitude = e.uav.longitude;
                 }
             });
         });
