@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alarm;
+use App\Events\AlarmStatusUpdated;
 use App\Status;
 use App\Events\AlarmReceived;
 use App\Events\ActionRequired;
@@ -34,7 +35,7 @@ class AlarmController extends Controller
             ->alarms()
             ->create($request->only("latitude", "longitude"));
 
-        event(new AlarmReceived($request->latitude, $request->longitude));
+        event(new AlarmReceived($alarm));
         event(new ActionRequired("goTo", [
             "target" => [
                 "id"        => $alarm->id,
@@ -59,5 +60,7 @@ class AlarmController extends Controller
         $alarm->update([
             "status_id" => $status->id
         ]);
+
+        event(new AlarmStatusUpdated($alarm));
     }
 }

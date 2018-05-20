@@ -12,19 +12,16 @@ class AlarmReceived implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $latitude;
-    public $longitude;
+    public $alarm;
 
     /**
      * Create a new event instance.
      *
-     * @param $latitude
-     * @param $longitude
+     * @param $alarm
      */
-    public function __construct($latitude, $longitude)
+    public function __construct($alarm)
     {
-        $this->latitude = $latitude;
-        $this->longitude = $longitude;
+        $this->alarm = $alarm;
     }
 
     /**

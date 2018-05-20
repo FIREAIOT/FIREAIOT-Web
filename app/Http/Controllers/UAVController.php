@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\UAV;
-use Illuminate\Http\Request;
 use App\Http\Resources\UAVResource;
 
 class UAVController extends Controller
