@@ -84523,7 +84523,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
         Echo.channel('UAVs').listen('UAVLocationUpdated', function (e) {
             console.log(e);
             _this.uavs.map(function (uav) {
-                return uav.id == e.uav.id ? uav = e.uav : null;
+                if (uav.id == e.uav.id) {
+                    uav.latitude = e.uav.latitude;
+                    uav.longitude = e.uav.longitude;
+                }
             });
         });
 

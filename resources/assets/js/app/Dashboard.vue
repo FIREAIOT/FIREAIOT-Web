@@ -131,7 +131,12 @@
             Echo.channel('UAVs')
                 .listen('UAVLocationUpdated', (e) => {
                     console.log(e);
-//                    this.uavs.map((uav) => uav.id == e.uav.id ? uav = e.uav: null);
+                    this.uavs.map((uav) => {
+                        if (uav.id == e.uav.id){
+                            uav.latitude  = e.uav.latitude;
+                            uav.longitude = e.uav.longitude;
+                        }
+                    });
                 });
 
             axios.get("/alarms").then((response) => {
