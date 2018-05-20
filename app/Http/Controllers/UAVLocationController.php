@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UAVLocationUpdated;
 use App\UAV;
 use App\Http\Requests\UpdateUAVLocationRequest;
 
@@ -19,6 +20,8 @@ class UAVLocationController extends Controller
             "latitude"  => $request->latitude,
             "longitude" => $request->longitude
         ]);
+
+        event(new UAVLocationUpdated($uav));
 
         return response()->json("ok", 200);
     }

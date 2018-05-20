@@ -128,9 +128,9 @@
             }
         },
         mounted() {
-            Echo.channel('alarms')
-                .listen('AlarmReceived', (e) => {
-                    this.alarm = e.alarm;
+            Echo.channel('UAVs')
+                .listen('UAVLocationUpdated', (e) => {
+                    this.uavs.map((uav) => uav.id == e.uav.id ? uav = e.uav: null);
                 });
 
             axios.get("/alarms").then((response) => {
