@@ -9,6 +9,7 @@ class UAVLocationController extends Controller
 {
     /**
      * @param UpdateUAVLocationRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(UpdateUAVLocationRequest $request)
     {
@@ -18,5 +19,7 @@ class UAVLocationController extends Controller
             "latitude"  => $request->latitude,
             "longitude" => $request->longitude
         ]);
+
+        return response()->json("ok", 200);
     }
 }
