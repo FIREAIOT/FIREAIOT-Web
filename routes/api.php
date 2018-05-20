@@ -5,7 +5,7 @@ Route::group(['prefix'=>'v1'], function(){
 
     Route::post("/alarms", "AlarmController@store")->middleware("auth:api");
 
-    Route::patch("/alarms", "AlarmController@update");
+    Route::put("/alarms", "AlarmController@update");
 
-    Route::patch("/uav/location", "UAVLocationController@update");
+    Route::put("/uav/location", "UAVLocationController@update");
 });
