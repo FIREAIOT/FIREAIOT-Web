@@ -2,29 +2,27 @@
 
 namespace App\Events;
 
+use App\Alarm;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class AlarmReceived implements ShouldBroadcast
+class AlarmStatusUpdated implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $latitude;
-    public $longitude;
+    public $alarm;
 
     /**
      * Create a new event instance.
      *
-     * @param $latitude
-     * @param $longitude
+     * @param Alarm $alarm
      */
-    public function __construct($latitude, $longitude)
+    public function __construct(Alarm $alarm)
     {
-        $this->latitude = $latitude;
-        $this->longitude = $longitude;
+        $this->alarm = $alarm;
     }
 
     /**
