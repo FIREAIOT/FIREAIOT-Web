@@ -123,8 +123,6 @@
                 },
                 alarms    : [],
                 uavs      : [],
-                longitude     : "",
-                latitude      : "",
                 selectedAlarm : {},
                 selectedUAV   : {},
             }
@@ -132,8 +130,7 @@
         mounted() {
             Echo.channel('alarms')
                 .listen('AlarmReceived', (e) => {
-                    this.longitude = e.longitude;
-                    this.latitude = e.latitude;
+                    this.alarm = e.alarm;
                 });
 
             axios.get("/alarms").then((response) => {
@@ -145,8 +142,6 @@
                 this.uavs = response.data.data;
                 this.selectedUAV = response.data.data[0];
             });
-
-            this.$snotify.success('Example body content');
         },
         methods: {
             position(item) {
