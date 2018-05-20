@@ -13,7 +13,7 @@ class StoreAlarmTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $response = $this->json("POST", "/api/alarms");
+        $response = $this->json("POST", "/api/v1/alarms");
 
         $response->assertStatus(401);
     }
@@ -25,7 +25,7 @@ class StoreAlarmTest extends TestCase
 
         $this->signIn();
 
-        $response = $this->json("POST", "/api/alarms", [
+        $response = $this->json("POST", "/api/v1/alarms", [
             "longitude" => 101.43232,
             "latitude"  => 25.43232,
         ]);
@@ -45,7 +45,7 @@ class StoreAlarmTest extends TestCase
 
         $this->signIn();
 
-        $this->json("POST", "/api/alarms", [
+        $this->json("POST", "/api/v1/alarms", [
             "longitude" => 101.43232,
             "latitude"  => 25.43232,
         ]);

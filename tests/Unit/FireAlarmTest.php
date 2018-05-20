@@ -13,7 +13,7 @@ class FireAlarmTest extends TestCase
 
         $this->signIn();
 
-        $response = $this->json("POST", "/api/alarms");
+        $response = $this->json("POST", "/api/v1/alarms");
 
         $response->assertStatus(422);
     }
