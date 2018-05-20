@@ -87028,7 +87028,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2
             _this.selectedUAV = response.data.data[0];
         });
 
-        vm.$snotify.success('Example body content');
+        this.$snotify.success('Example body content');
     },
 
     methods: {
