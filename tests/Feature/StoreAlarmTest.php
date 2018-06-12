@@ -11,7 +11,7 @@ class StoreAlarmTest extends TestCase
     /** @test */
     public function a_guest_may_not_report_a_fire_alarm()
     {
-        $this->withExceptionHandling();
+//        $this->withExceptionHandling();
 
         $response = $this->json("POST", "/api/v1/alarms");
 
