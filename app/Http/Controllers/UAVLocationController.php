@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UAVLocationUpdated;
 use App\UAV;
+use App\Events\UAVLocationUpdated;
 use App\Http\Requests\UpdateUAVLocationRequest;
 
 class UAVLocationController extends Controller

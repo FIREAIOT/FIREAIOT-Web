@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Alarm;
-use App\Events\AlarmStatusUpdated;
 use App\Status;
 use App\Events\AlarmReceived;
 use App\Events\ActionRequired;
+use App\Events\AlarmStatusUpdated;
 use App\Http\Resources\AlarmResource;
 use App\Http\Requests\StoreAlarmRequest;
 use App\Http\Requests\UpdateAlarmRequest;
