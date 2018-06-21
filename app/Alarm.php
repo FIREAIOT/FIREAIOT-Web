@@ -15,8 +15,8 @@ class Alarm extends Model
      * @var array
      */
     protected $casts = [
-        "longitude" => "double",
-        "latitude"  => "double",
+        'longitude' => 'double',
+        'latitude'  => 'double',
     ];
 
     /**

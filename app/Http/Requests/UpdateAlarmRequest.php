@@ -24,8 +24,8 @@ class UpdateAlarmRequest extends FormRequest
     public function rules()
     {
         return [
-            "alarm_id" => "required|exists:alarms,id",
-            "status"   => "required|exists:statuses,name"
+            'alarm_id' => 'required|exists:alarms,id',
+            'status'   => 'required|exists:statuses,name'
         ];
     }
 }

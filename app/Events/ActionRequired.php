@@ -23,7 +23,7 @@ class ActionRequired implements ShouldBroadcast
      */
     public function __construct($action, $payload)
     {
-        $this->action  = $action;
+        $this->action = $action;
         $this->payload = $payload;
     }
 

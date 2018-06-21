@@ -24,9 +24,9 @@ class UpdateUAVLocationRequest extends FormRequest
     public function rules()
     {
         return [
-            "uuid"      => "required",
-            "latitude"  => "required",
-            "longitude" => "required"
+            'uuid'      => 'required',
+            'latitude'  => 'required',
+            'longitude' => 'required'
         ];
     }
 }
