@@ -15,12 +15,12 @@ class AlarmResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"        => $this->id,
-            "user"      => $this->user->name,
-            "longitude" => $this->longitude,
-            "latitude"  => $this->latitude,
-            "status"    => $this->status->name,
-            "createdAt" => $this->created_at->diffForHumans()
+            'id'        => $this->id,
+            'user'      => $this->user->name,
+            'longitude' => $this->longitude,
+            'latitude'  => $this->latitude,
+            'status'    => $this->status->name,
+            'createdAt' => $this->created_at->diffForHumans()
         ];
     }
 }

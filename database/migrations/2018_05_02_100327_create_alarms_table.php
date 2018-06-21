@@ -15,10 +15,10 @@ class CreateAlarmsTable extends Migration
     {
         Schema::create('alarms', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("user_id");
-            $table->string("longitude");
-            $table->string("latitude");
-            $table->integer("status_id")->default(1);
+            $table->integer('user_id');
+            $table->string('longitude');
+            $table->string('latitude');
+            $table->integer('status_id')->default(1);
             $table->timestamps();
         });
     }

@@ -24,8 +24,8 @@ class StoreAlarmRequest extends FormRequest
     public function rules()
     {
         return [
-            "longitude" => "required",
-            "latitude"  => "required",
+            'longitude' => 'required',
+            'latitude'  => 'required',
         ];
     }
 }

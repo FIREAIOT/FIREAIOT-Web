@@ -14,15 +14,15 @@ class UAVLocationController extends Controller
      */
     public function update(UpdateUAVLocationRequest $request)
     {
-        $uav = UAV::where("uuid", $request->uuid)->first();
+        $uav = UAV::where('uuid', $request->uuid)->first();
 
         $uav->update([
-            "latitude"  => $request->latitude,
-            "longitude" => $request->longitude
+            'latitude'  => $request->latitude,
+            'longitude' => $request->longitude
         ]);
 
         event(new UAVLocationUpdated($uav));
 
-        return response()->json("ok", 200);
+        return response()->json('ok', 200);
     }
 }
