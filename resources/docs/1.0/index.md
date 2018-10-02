@@ -1,0 +1,6 @@
+- ## Get Started
+    - [Overview](/docs/{{version}}/overview)
+- ## API
+    - [Configurations](/docs/{{version}}/api/configurations)
+    - [Errors](/docs/{{version}}/api/errors)
+    - [Registration](/docs/{{version}}/api/registration)
