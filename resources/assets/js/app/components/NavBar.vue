@@ -40,7 +40,7 @@
                     <div class="navbar-end">
                         <!-- Login button -->
                         <div v-if="! check" class="navbar-item">
-                            <router-link :to="{ name: 'login' }" class="button btn-outlined button-cta is-bold btn-align rounded raised" :class="[isLight ? 'light-btn' : 'primary-btn']">Get Started</router-link>
+                            <router-link :to="{ name: 'login' }" class="button btn-outlined button-cta is-bold btn-align raised" :class="[isLight ? 'light-btn' : 'primary-btn']">Get Started</router-link>
                         </div>
                         <!-- /Login button -->
 
