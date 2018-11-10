@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Resources\UserResource;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
@@ -26,7 +26,7 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-    
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -42,7 +42,7 @@ class RegisterController extends Controller
             'password'      => 'required|string|min:6',
         ]);
     }
-    
+
     /**
      * Create a new user instance after a valid registration.
      *

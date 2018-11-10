@@ -10,14 +10,14 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
-    
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = '/';
-    
+
     /**
      * Create a new controller instance.
      *
@@ -45,7 +45,7 @@ class LoginController extends Controller
         }
 
         try {
-            $response = $client->post(config('app.url') . '/oauth/token', [
+            $response = $client->post(config('app.url').'/oauth/token', [
                 'form_params'       => [
                     'client_id'     => config('auth.proxy.client_id'),
                     'client_secret' => config('auth.proxy.client_secret'),
@@ -58,10 +58,10 @@ class LoginController extends Controller
 
             if ($response->getStatusCode() === 200) {
                 $this->clearLoginAttempts($request);
-    
+
                 return response($response->getBody()->getContents(), $response->getStatusCode());
             }
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->incrementLoginAttempts($request);
 
             return response('Invalid!', 401);
