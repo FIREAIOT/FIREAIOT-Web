@@ -43,6 +43,12 @@
                         </div>
                         <!-- /Login button -->
 
+                        <!-- Dashboard button -->
+                        <div v-if="check" class="navbar-item">
+                            <router-link :to="{ name: 'dashboard' }" class="button btn-outlined button-cta is-bold btn-align raised" :class="[isLight ? 'light-btn' : 'primary-btn']">Dashboard</router-link>
+                        </div>
+                        <!-- /Dashboard button -->
+
                         <!-- Quick actions menu -->
                         <div v-if="check" class="navbar-item" >
                             <actions-menu :class="[isLight ? 'light-btn' : 'primary-btn']"></actions-menu>

@@ -13,7 +13,7 @@
                             </router-link>
                             <div id="signup-intro" class="intro-text">
                                 <div class="intro-title">FIREAIOT</div>
-                                <div class="intro-sub">Join your community now!</div>
+                                <div class="intro-sub">Help your community now!</div>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                                         <div class="login-form animated preFadeInLeft fadeInLeft">
                                             <div class="field pb-10">
                                                 <div class="control has-icons-right">
-                                                    <input class="input is-large" type="email" placeholder="Email address" required autocomplete="false" v-model="loginForm.email">
+                                                    <input class="input is-large" type="email" placeholder="Email address" required v-model="loginForm.email">
                                                     <span class="icon is-medium is-right">
                                                 <i class="im im-icon-Envelope"></i>
                                             </span>
@@ -36,7 +36,7 @@
                                             </div>
                                             <div class="field pb-10">
                                                 <div class="control has-icons-right">
-                                                    <input class="input is-large" type="password" placeholder="Password" required autocomplete="false" v-model="loginForm.password">
+                                                    <input class="input is-large" type="password" placeholder="Password" required v-model="loginForm.password">
                                                     <span class="icon is-medium is-right">
                                                 <i class="im im-icon-Key-2"></i>
                                             </span>
@@ -57,14 +57,6 @@
                                                     <input class="input is-large" type="text" placeholder="Full name" required v-model="registerForm.name">
                                                     <span class="icon is-medium is-right">
                                                 <i class="im im-icon-ID-2"></i>
-                                            </span>
-                                                </div>
-                                            </div>
-                                            <div class="field pb-10">
-                                                <div class="control has-icons-right">
-                                                    <input class="input is-large" type="text" placeholder="Username" required v-model="registerForm.username">
-                                                    <span class="icon is-medium is-right">
-                                                <i class="im im-icon-User"></i>
                                             </span>
                                                 </div>
                                             </div>
@@ -114,6 +106,14 @@
                 </div>
             </div>
             <!-- /Form section -->
+
+            <!-- Image section (hidden on mobile) -->
+            <div class="column login-column is-8 is-hidden-mobile hero-banner" style="display: flex; justify-content: center; align-items: center">
+                <div class="hero">
+                    <img src="/images/login.svg" alt="drone" width="500px">
+                </div>
+            </div>
+            <!-- /Image section -->
         </div>
         <!-- /Wrapper-->
     </div>
@@ -134,8 +134,7 @@
                 registerForm: new Form({
                     name: '',
                     email: '',
-                    password: '',
-                    username: ''
+                    password: ''
                 })
             }
         },

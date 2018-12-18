@@ -34619,7 +34619,7 @@ var actions = {
             dispatch = _ref6.dispatch;
 
         return new Promise(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/user').then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/v1/user').then(function (response) {
                 commit('setAuthenticated', true);
                 commit('setUser', response.data.data);
                 resolve();
@@ -35477,6 +35477,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -35812,6 +35818,26 @@ var render = function() {
                             attrs: { to: { name: "login" } }
                           },
                           [_vm._v("Get Started")]
+                        )
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.check
+                  ? _c(
+                      "div",
+                      { staticClass: "navbar-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass:
+                              "button btn-outlined button-cta is-bold btn-align raised",
+                            class: [_vm.isLight ? "light-btn" : "primary-btn"],
+                            attrs: { to: { name: "dashboard" } }
+                          },
+                          [_vm._v("Dashboard")]
                         )
                       ],
                       1
@@ -36470,8 +36496,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             registerForm: new Form({
                 name: '',
                 email: '',
-                password: '',
-                username: ''
+                password: ''
             })
         };
     },
@@ -36650,8 +36675,7 @@ var render = function() {
                                       attrs: {
                                         type: "email",
                                         placeholder: "Email address",
-                                        required: "",
-                                        autocomplete: "false"
+                                        required: ""
                                       },
                                       domProps: { value: _vm.loginForm.email },
                                       on: {
@@ -36691,8 +36715,7 @@ var render = function() {
                                       attrs: {
                                         type: "password",
                                         placeholder: "Password",
-                                        required: "",
-                                        autocomplete: "false"
+                                        required: ""
                                       },
                                       domProps: {
                                         value: _vm.loginForm.password
@@ -36805,48 +36828,6 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.registerForm.username,
-                                          expression: "registerForm.username"
-                                        }
-                                      ],
-                                      staticClass: "input is-large",
-                                      attrs: {
-                                        type: "text",
-                                        placeholder: "Username",
-                                        required: ""
-                                      },
-                                      domProps: {
-                                        value: _vm.registerForm.username
-                                      },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            _vm.registerForm,
-                                            "username",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _vm._m(4)
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "field pb-10" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "control has-icons-right" },
-                                  [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
                                           value: _vm.registerForm.email,
                                           expression: "registerForm.email"
                                         }
@@ -36874,7 +36855,7 @@ var render = function() {
                                       }
                                     }),
                                     _vm._v(" "),
-                                    _vm._m(5)
+                                    _vm._m(4)
                                   ]
                                 )
                               ]),
@@ -36916,7 +36897,7 @@ var render = function() {
                                       }
                                     }),
                                     _vm._v(" "),
-                                    _vm._m(6)
+                                    _vm._m(5)
                                   ]
                                 )
                               ]),
@@ -36948,7 +36929,7 @@ var render = function() {
                           on: { click: _vm.toggleAction }
                         },
                         [
-                          _vm._m(7),
+                          _vm._m(6),
                           _vm._v(" "),
                           _c(
                             "p",
@@ -36977,7 +36958,7 @@ var render = function() {
                             "section forgot-password animated preFadeInLeft fadeInLeft no-padding-top",
                           on: { click: _vm.toggleAction }
                         },
-                        [_vm._m(8)]
+                        [_vm._m(7)]
                       )
                     : _vm._e()
                 ])
@@ -36985,7 +36966,9 @@ var render = function() {
             ])
           ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(8)
     ])
   ])
 }
@@ -37001,7 +36984,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "intro-title" }, [_vm._v("FIREAIOT")]),
         _vm._v(" "),
         _c("div", { staticClass: "intro-sub" }, [
-          _vm._v("Join your community now!")
+          _vm._v("Help your community now!")
         ])
       ]
     )
@@ -37028,14 +37011,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "icon is-medium is-right" }, [
       _c("i", { staticClass: "im im-icon-ID-2" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon is-medium is-right" }, [
-      _c("i", { staticClass: "im im-icon-User" })
     ])
   },
   function() {
@@ -37071,6 +37046,29 @@ var staticRenderFns = [
     return _c("p", { staticClass: "has-text-centered" }, [
       _c("a", { attrs: { href: "#" } }, [_vm._v("Have an account? Login!")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "column login-column is-8 is-hidden-mobile hero-banner",
+        staticStyle: {
+          display: "flex",
+          "justify-content": "center",
+          "align-items": "center"
+        }
+      },
+      [
+        _c("div", { staticClass: "hero" }, [
+          _c("img", {
+            attrs: { src: "/images/login.svg", alt: "drone", width: "500px" }
+          })
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true

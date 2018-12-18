@@ -51,7 +51,7 @@ const actions = {
     },
     fetchUser({ commit, dispatch }) {
         return new Promise((resolve, reject) => {
-            axios.get('/api/user').then(response => {
+            axios.get('/api/v1/user').then(response => {
                 commit('setAuthenticated', true);
                 commit('setUser', response.data.data);
                 resolve()
