@@ -31,8 +31,7 @@
                 <div class="navbar-menu">
                     <!-- Navbar Start -->
                     <div class="navbar-start">
-                        <router-link v-if="! check" :to="{ name: 'how' }" class="navbar-item is-slide">How it works</router-link>
-                        <router-link v-if="! check" :to="{ name: 'how' }" class="navbar-item is-slide">Host your drone</router-link>
+                        <router-link v-if="! check" :to="{ name: 'home' }" class="navbar-item is-slide">Host your drone</router-link>
                     </div>
                     <!-- /Navbar Start -->
                 

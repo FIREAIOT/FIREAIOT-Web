@@ -21435,8 +21435,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ }),
 /* 25 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_Form__ = __webpack_require__(368);
 window._ = __webpack_require__(9);
 
 try {
@@ -21447,6 +21450,9 @@ window.axios = __webpack_require__(11);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.headers.common['Content-Type'] = 'application/json';
+
+
+window.Form = __WEBPACK_IMPORTED_MODULE_0__core_Form__["a" /* default */];
 
 __webpack_require__(46);
 __webpack_require__(47);
@@ -35471,7 +35477,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -35783,18 +35788,7 @@ var render = function() {
                         "router-link",
                         {
                           staticClass: "navbar-item is-slide",
-                          attrs: { to: { name: "how" } }
-                        },
-                        [_vm._v("How it works")]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  !_vm.check
-                    ? _c(
-                        "router-link",
-                        {
-                          staticClass: "navbar-item is-slide",
-                          attrs: { to: { name: "how" } }
+                          attrs: { to: { name: "home" } }
                         },
                         [_vm._v("Host your drone")]
                       )
@@ -35953,7 +35947,7 @@ var staticRenderFns = [
       {
         staticClass:
           "button button-cta btn-outlined primary-btn raised  js-modal-btn",
-        attrs: { "data-video-id": "jspyEX0wj4Q" }
+        attrs: { "data-video-id": "1VxGbT8hTBc" }
       },
       [_c("i", { staticClass: "fa fa-play" }), _vm._v(" Watch a Video")]
     )
@@ -36120,7 +36114,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "column-item",
-                        attrs: { tag: "li", to: { name: "how" } }
+                        attrs: { tag: "li", to: { name: "home" } }
                       },
                       [
                         _c("a", { attrs: { href: "#" } }, [
@@ -36133,7 +36127,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "column-item",
-                        attrs: { tag: "li", to: { name: "contact" } }
+                        attrs: { tag: "li", to: { name: "home" } }
                       },
                       [
                         _c("a", { attrs: { href: "#" } }, [
@@ -36146,7 +36140,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "column-item",
-                        attrs: { tag: "li", to: { name: "upgradeAccount" } }
+                        attrs: { tag: "li", to: { name: "home" } }
                       },
                       [
                         _c("a", { attrs: { href: "#" } }, [
@@ -36174,7 +36168,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "column-item",
-                        attrs: { tag: "li", to: { name: "FAQ" } }
+                        attrs: { tag: "li", to: { name: "home" } }
                       },
                       [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")])]
                     ),
@@ -36183,7 +36177,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "column-item",
-                        attrs: { tag: "li", to: { name: "terms" } }
+                        attrs: { tag: "li", to: { name: "home" } }
                       },
                       [
                         _c("a", { attrs: { href: "#" } }, [
@@ -36196,7 +36190,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "column-item",
-                        attrs: { tag: "li", to: { name: "privacy" } }
+                        attrs: { tag: "li", to: { name: "home" } }
                       },
                       [
                         _c("a", { attrs: { href: "#" } }, [
@@ -52361,6 +52355,187 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Errors__ = __webpack_require__(369);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var Form = function () {
+    function Form(data) {
+        _classCallCheck(this, Form);
+
+        this.originalData = data;
+
+        for (var field in data) {
+            this[field] = data[field];
+        }
+
+        this.errors = new __WEBPACK_IMPORTED_MODULE_0__Errors__["a" /* default */]();
+    }
+
+    _createClass(Form, [{
+        key: 'data',
+        value: function data() {
+            var data = {};
+
+            for (var property in this.originalData) {
+                data[property] = this[property];
+            }
+
+            return data;
+        }
+    }, {
+        key: 'reset',
+        value: function reset() {
+            for (var field in this.originalData) {
+                this[field] = '';
+            }
+
+            this.errors.clear();
+        }
+    }, {
+        key: 'post',
+        value: function post(url) {
+            return this.submit('post', url);
+        }
+    }, {
+        key: 'submit',
+        value: function submit(requestType, url) {
+            var _this = this;
+
+            return new Promise(function (resolve, reject) {
+                var config = {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                };
+                axios[requestType](url, _this.data(), config).then(function (response) {
+                    resolve(response.data);
+                }).catch(function (error) {
+                    _this.onFail(error.response.data.errors);
+
+                    reject(error.response.data);
+                });
+            });
+        }
+    }, {
+        key: 'onFail',
+        value: function onFail(errors) {
+            this.errors.record(errors);
+        }
+    }]);
+
+    return Form;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Form);
+
+/***/ }),
+/* 369 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Errors = function () {
+    /**
+     * Create a new Errors instance.
+     */
+    function Errors() {
+        _classCallCheck(this, Errors);
+
+        this.errors = {};
+    }
+
+    /**
+     * Determine if an errors exists for the given field.
+     *
+     * @param {string} field
+     */
+
+
+    _createClass(Errors, [{
+        key: "has",
+        value: function has(field) {
+            return this.errors.hasOwnProperty(field);
+        }
+
+        /**
+         * Determine if we have any errors.
+         */
+
+    }, {
+        key: "any",
+        value: function any() {
+            return Object.keys(this.errors).length > 0;
+        }
+
+        /**
+         * Retrieve the error message for a field.
+         *
+         * @param {string} field
+         */
+
+    }, {
+        key: "get",
+        value: function get(field) {
+            if (this.errors[field]) {
+                return this.errors[field][0];
+            }
+        }
+
+        /**
+         * Record the new errors.
+         *
+         * @param {object} errors
+         */
+
+    }, {
+        key: "record",
+        value: function record(errors) {
+            this.errors = errors;
+        }
+
+        /**
+         * Clear one or all error fields.
+         *
+         * @param {string|null} field
+         */
+
+    }, {
+        key: "clear",
+        value: function clear(field) {
+            if (field) {
+                delete this.errors[field];
+
+                return;
+            }
+
+            this.errors = {};
+        }
+    }]);
+
+    return Errors;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Errors);
 
 /***/ })
 ],[23]);

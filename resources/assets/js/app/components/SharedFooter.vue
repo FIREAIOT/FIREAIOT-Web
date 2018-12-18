@@ -22,9 +22,9 @@
                                 <li class="column-header">
                                     FIREAIOT
                                 </li>
-                                <router-link tag="li" :to="{ name: 'how' }" class="column-item"><a href="#">How it works?</a></router-link>
-                                <router-link tag="li" :to="{ name: 'contact' }" class="column-item"><a href="#">Contact us</a></router-link>
-                                <router-link tag="li" :to="{ name: 'upgradeAccount' }" class="column-item"><a href="#">Host your drone</a></router-link>
+                                <router-link tag="li" :to="{ name: 'home' }" class="column-item"><a href="#">How it works?</a></router-link>
+                                <router-link tag="li" :to="{ name: 'home' }" class="column-item"><a href="#">Contact us</a></router-link>
+                                <router-link tag="li" :to="{ name: 'home' }" class="column-item"><a href="#">Host your drone</a></router-link>
                             </ul>
                         </div>
                         <!-- Column -->
@@ -33,9 +33,9 @@
                                 <li class="column-header">
                                     Meta
                                 </li>
-                                <router-link tag="li" :to="{ name: 'FAQ' }" class="column-item"><a href="#">FAQ</a></router-link>
-                                <router-link tag="li" :to="{ name: 'terms' }" class="column-item"><a href="#">Terms of Use</a></router-link>
-                                <router-link tag="li" :to="{ name: 'privacy' }" class="column-item"><a href="#">Privacy Policy</a></router-link>
+                                <router-link tag="li" :to="{ name: 'home' }" class="column-item"><a href="#">FAQ</a></router-link>
+                                <router-link tag="li" :to="{ name: 'home' }" class="column-item"><a href="#">Terms of Use</a></router-link>
+                                <router-link tag="li" :to="{ name: 'home' }" class="column-item"><a href="#">Privacy Policy</a></router-link>
                             </ul>
                         </div>
                     </div>

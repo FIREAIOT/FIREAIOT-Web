@@ -11,7 +11,7 @@
                         <router-link :to="{ name: 'home' }" class="button button-cta primary-btn raised ">
                             Host your drone
                         </router-link>
-                        <a class="button button-cta btn-outlined primary-btn raised  js-modal-btn" data-video-id="jspyEX0wj4Q"><i class="fa fa-play"></i> Watch a Video</a>
+                        <a class="button button-cta btn-outlined primary-btn raised  js-modal-btn" data-video-id="1VxGbT8hTBc"><i class="fa fa-play"></i> Watch a Video</a>
                     </div>
                     <div class="column">
                         <div class="is-fullwidth">
