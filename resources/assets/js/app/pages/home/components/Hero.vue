@@ -8,7 +8,7 @@
                     <div class="column">
                         <h1 class="title big-title">Convert Your Drone To A Real Firefighter</h1>
                         <div class="subtitle light-subtitle">Help your community extinguish fires with your drone when you don't use it!</div>
-                        <router-link :to="{ name: 'home' }" class="button button-cta primary-btn raised ">
+                        <router-link :to="{ name: 'dashboard' }" class="button button-cta primary-btn raised ">
                             Host your drone
                         </router-link>
                         <a class="button button-cta btn-outlined primary-btn raised  js-modal-btn" data-video-id="1VxGbT8hTBc"><i class="fa fa-play"></i> Watch a Video</a>

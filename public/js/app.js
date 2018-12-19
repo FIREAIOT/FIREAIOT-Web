@@ -35655,12 +35655,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -35953,7 +35947,7 @@ var render = function() {
                         "router-link",
                         {
                           staticClass: "navbar-item is-slide",
-                          attrs: { to: { name: "home" } }
+                          attrs: { to: { name: "dashboard" } }
                         },
                         [_vm._v("Host your drone")]
                       )
@@ -35977,24 +35971,6 @@ var render = function() {
                             attrs: { to: { name: "login" } }
                           },
                           [_vm._v("Get Started")]
-                        )
-                      ],
-                      1
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.check
-                  ? _c(
-                      "div",
-                      { staticClass: "navbar-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            class: [_vm.isLight ? "light-btn" : "primary-btn"],
-                            attrs: { to: { name: "dashboard" } }
-                          },
-                          [_vm._v("Dashboard")]
                         )
                       ],
                       1
@@ -36098,7 +36074,7 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "button button-cta primary-btn raised ",
-                    attrs: { to: { name: "home" } }
+                    attrs: { to: { name: "dashboard" } }
                   },
                   [
                     _vm._v(

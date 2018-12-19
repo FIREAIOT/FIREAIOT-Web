@@ -31,7 +31,7 @@
                 <div class="navbar-menu">
                     <!-- Navbar Start -->
                     <div class="navbar-start">
-                        <router-link v-if="! check" :to="{ name: 'home' }" class="navbar-item is-slide">Host your drone</router-link>
+                        <router-link v-if="! check" :to="{ name: 'dashboard' }" class="navbar-item is-slide">Host your drone</router-link>
                     </div>
                     <!-- /Navbar Start -->
                 
@@ -42,12 +42,6 @@
                             <router-link :to="{ name: 'login' }" class="button btn-outlined button-cta is-bold btn-align raised" :class="[isLight ? 'light-btn' : 'primary-btn']">Get Started</router-link>
                         </div>
                         <!-- /Login button -->
-
-                        <!-- Dashboard button -->
-                        <div v-if="check" class="navbar-item">
-                            <router-link :to="{ name: 'dashboard' }" :class="[isLight ? 'light-btn' : 'primary-btn']">Dashboard</router-link>
-                        </div>
-                        <!-- /Dashboard button -->
 
                         <!-- Quick actions menu -->
                         <div v-if="check" class="navbar-item" >
