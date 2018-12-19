@@ -17,7 +17,7 @@ class UAVController extends Controller
     public function index()
     {
         return UAVResource::collection(
-            UAV::get()
+            auth()->user()->uavs
         );
     }
 

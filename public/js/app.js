@@ -18332,6 +18332,8 @@ module.exports = Cancel;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_vuex_auth__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_vuex_loading__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_vuex_uavs__ = __webpack_require__(381);
+
 
 
 
@@ -18343,7 +18345,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["default"].Store({
     modules: {
         auth: __WEBPACK_IMPORTED_MODULE_2__app_vuex_auth__["a" /* default */],
-        loading: __WEBPACK_IMPORTED_MODULE_3__app_vuex_loading__["a" /* default */]
+        loading: __WEBPACK_IMPORTED_MODULE_3__app_vuex_loading__["a" /* default */],
+        uavs: __WEBPACK_IMPORTED_MODULE_4__app_vuex_uavs__["a" /* default */]
     }
 }));
 
@@ -41914,6 +41917,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -49769,13 +49774,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('statistics', ['statistics']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('mode', ['mode'])),
-    watch: {
-        mode: function mode(newValue) {
-            this.fetch();
-        }
-    },
-    methods: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('statistics', ['fetch']),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('uavs', ['uavs'])),
+    methods: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('uavs', ['fetch']),
     mounted: function mounted() {
         this.fetch();
     }
@@ -49789,42 +49789,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "columns" },
-    _vm._l(_vm.statistics, function(statistic, key) {
-      return _c("div", { key: key, staticClass: "column is-one-third" }, [
-        _c(
-          "div",
-          {
-            staticClass: "flex-card card-overflow light-bordered light-raised"
-          },
-          [
-            _vm._m(0, true),
-            _vm._v(" "),
-            _c("div", { staticClass: "content" }, [
-              _c("div", { staticClass: "card-title is-tile has-text-right" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(statistic) +
-                    "\n                    "
-                ),
-                _c(
-                  "div",
-                  { staticClass: "card-stat secondary has-text-right" },
-                  [
-                    _c("span", { staticClass: "stat-type" }, [
-                      _vm._v(_vm._s(key))
-                    ])
-                  ]
-                )
+  return _c("div", { staticClass: "columns" }, [
+    _c("div", { staticClass: "column" }, [
+      _c(
+        "div",
+        { staticClass: "flex-card card-overflow light-bordered light-raised" },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "content" }, [
+            _c("div", { staticClass: "card-title is-tile has-text-right" }, [
+              _vm._v("\n                    UAVs\n                    "),
+              _c("div", { staticClass: "card-stat secondary has-text-right" }, [
+                _c("span", { staticClass: "stat-type" }, [
+                  _vm._v(_vm._s(_vm.uavs.length))
+                ])
               ])
             ])
-          ]
-        )
-      ])
-    })
-  )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -49882,7 +49868,19 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _vm._m(0)
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "column is-two-thirds animated preFadeInUp fadeInUp delay-0 pt-30"
+                      },
+                      [
+                        _c("statistics"),
+                        _vm._v(" "),
+                        _c("h1", [_vm._v("dsggds")])
+                      ],
+                      1
+                    )
                   ])
                 ])
               : _vm._e()
@@ -49896,21 +49894,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "column is-two-thirds animated preFadeInUp fadeInUp delay-0 pt-30"
-      },
-      [_c("h1", [_vm._v("dsggds")])]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -52144,6 +52128,58 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-30519b12", module.exports)
   }
 }
+
+/***/ }),
+/* 381 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
+
+
+
+var state = {
+    uavs: []
+};
+
+var getters = {
+    uavs: function uavs(state) {
+        return state.uavs;
+    }
+};
+
+var mutations = {
+    setUavs: function setUavs(state, uavs) {
+        state.uavs = uavs;
+    }
+};
+
+var actions = {
+    fetch: function fetch(_ref) {
+        var commit = _ref.commit,
+            dispatch = _ref.dispatch;
+
+        return new Promise(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/v1/uavs').then(function (response) {
+                commit('setUavs', response.data.data);
+                resolve();
+            }).catch(function () {
+                return reject();
+            });
+        });
+    }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    namespaced: true,
+    state: state,
+    mutations: mutations,
+    actions: actions,
+    getters: getters
+});
 
 /***/ })
 ],[23]);

@@ -11,6 +11,8 @@
                         </div>
 
                         <div class="column is-two-thirds animated preFadeInUp fadeInUp delay-0 pt-30">
+                            <statistics></statistics>
+                            
                             <h1>dsggds</h1>
                         </div>
                     </div>

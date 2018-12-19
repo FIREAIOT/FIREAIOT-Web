@@ -13,6 +13,7 @@
         <meta name="keywords" content="iot, embedded systems">
         <link rel="canonical" href="{{ url('/') }}" />
 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <style>
             @font-face {
                 font-family: 'Nexa Light';
