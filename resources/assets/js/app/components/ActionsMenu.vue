@@ -1,5 +1,5 @@
 <template>
-    <div class="button button-cta btn-align btn-outlined rounded is-drop is-bold is-centered">{{ user.name }}
+    <div class="button button-cta btn-align btn-outlined is-drop is-bold is-centered">{{ user.name }}
         <div class="dropContain">
             <div class="dropOut is-primary">
                 <div class="triangle"></div>

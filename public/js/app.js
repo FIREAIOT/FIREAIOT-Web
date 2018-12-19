@@ -35821,7 +35821,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "button button-cta btn-align btn-outlined rounded is-drop is-bold is-centered"
+        "button button-cta btn-align btn-outlined is-drop is-bold is-centered"
     },
     [
       _vm._v(_vm._s(_vm.user.name) + "\n    "),
@@ -41874,22 +41874,23 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_sticky_directive__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_sticky_directive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_sticky_directive__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Profile__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Profile___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Profile__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_SideBar__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_SideBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_SideBar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_NavBar__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_NavBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_NavBar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Uavs__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Uavs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_Uavs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Uavs__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Uavs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Uavs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_sticky_directive__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_sticky_directive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_sticky_directive__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Profile__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Profile___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Profile__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_SideBar__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_SideBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_SideBar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_NavBar__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_NavBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_NavBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Statistics__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Statistics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Statistics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_SharedFooter__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_SharedFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_SharedFooter__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -41938,15 +41939,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('auth', ['check']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('mode', ['mode'])),
     components: {
-        navBar: __WEBPACK_IMPORTED_MODULE_4__components_NavBar___default.a,
+        navBar: __WEBPACK_IMPORTED_MODULE_5__components_NavBar___default.a,
         sharedFooter: __WEBPACK_IMPORTED_MODULE_7__components_SharedFooter___default.a,
         Statistics: __WEBPACK_IMPORTED_MODULE_6__components_Statistics___default.a,
-        Uavs: __WEBPACK_IMPORTED_MODULE_5__components_Uavs___default.a,
-        Profile: __WEBPACK_IMPORTED_MODULE_2__components_Profile___default.a,
-        SideBar: __WEBPACK_IMPORTED_MODULE_3__components_SideBar___default.a
+        Uavs: __WEBPACK_IMPORTED_MODULE_1__components_Uavs___default.a,
+        Profile: __WEBPACK_IMPORTED_MODULE_3__components_Profile___default.a,
+        SideBar: __WEBPACK_IMPORTED_MODULE_4__components_SideBar___default.a
     },
     directives: {
-        Sticky: __WEBPACK_IMPORTED_MODULE_1_vue_sticky_directive___default.a
+        Sticky: __WEBPACK_IMPORTED_MODULE_2_vue_sticky_directive___default.a
     }
 });
 
@@ -49863,7 +49864,9 @@ var render = function() {
                       [
                         _c("profile", {
                           staticClass: "animated preFadeInUp fadeInUp"
-                        })
+                        }),
+                        _vm._v(" "),
+                        _c("sideBar")
                       ],
                       1
                     ),
@@ -49874,11 +49877,7 @@ var render = function() {
                         staticClass:
                           "column is-two-thirds animated preFadeInUp fadeInUp delay-0 pt-30"
                       },
-                      [
-                        _c("statistics"),
-                        _vm._v(" "),
-                        _c("h1", [_vm._v("dsggds")])
-                      ],
+                      [_c("statistics"), _vm._v(" "), _c("uavs")],
                       1
                     )
                   ])
@@ -51640,7 +51639,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("div", { staticClass: "button" }, [_vm._v("Add Your Drone")])
+      _c(
+        "a",
+        { staticClass: "button  primary-btn btn-outlined is-bold is-block" },
+        [_vm._v("Add Your Drone")]
+      )
     ])
   }
 ]
@@ -51775,29 +51778,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'Sessions',
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["mapGetters"])('sessions', ['sessions']), Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["mapGetters"])('mode', ['isStudentMode', 'isTutorMode']), Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["mapGetters"])('loading', ['isLoading'])),
-    methods: {
-        showSession: function showSession(session) {
-            this.$router.push({ name: 'session', params: { session: session.id } });
-        }
-    },
+    name: 'Uavs',
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["mapGetters"])('uavs', ['uavs']), Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["mapGetters"])('loading', ['isLoading'])),
     components: {
         Uav: __WEBPACK_IMPORTED_MODULE_0__Uav___default.a,
         Jumper: __WEBPACK_IMPORTED_MODULE_1_vue_loading_spinner__["a" /* Jumper */]
@@ -51815,65 +51803,22 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "div",
-        { staticClass: "has-text-right mb-20" },
-        [
-          _vm.isStudentMode
-            ? _c(
-                "router-link",
-                {
-                  staticClass: "button rounded primary-btn btn-outlined",
-                  attrs: { tag: "a", to: { name: "courses" } }
-                },
-                [
-                  _c("i", { staticClass: "im im-icon-Add" }),
-                  _vm._v(" Request New Session\n        ")
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.isTutorMode
-            ? _c(
-                "router-link",
-                {
-                  staticClass: "button rounded primary-btn btn-outlined",
-                  attrs: { tag: "a", to: { name: "newOffer" } }
-                },
-                [
-                  _c("i", { staticClass: "im im-icon-Add" }),
-                  _vm._v(" Post New Offer\n        ")
-                ]
-              )
-            : _vm._e()
-        ],
-        1
-      ),
-      _vm._v(" "),
       _c("loader", {
         staticClass: "column is-4 is-offset-4 mb-50 mt-50",
         attrs: { active: _vm.isLoading }
       }),
       _vm._v(" "),
-      !_vm.isLoading && _vm.sessions
+      !_vm.isLoading && _vm.uavs
         ? _c(
             "div",
             { staticClass: "tasks-wrapper mt-5" },
-            _vm._l(_vm.sessions, function(session) {
-              return _c("uav", {
-                key: session.id,
-                attrs: { data: session },
-                nativeOn: {
-                  click: function($event) {
-                    _vm.showSession(session)
-                  }
-                }
-              })
+            _vm._l(_vm.uavs, function(uav) {
+              return _c("uav", { key: uav.id, attrs: { data: uav } })
             })
           )
         : _vm._e(),
       _vm._v(" "),
-      !_vm.isLoading && !_vm.sessions.length
+      !_vm.isLoading && !_vm.uavs.length
         ? _c(
             "div",
             { staticClass: "tasks-wrapper" },
@@ -51881,7 +51826,7 @@ var render = function() {
               _c("jumper", { staticClass: "mt-20", attrs: { size: "100" } }),
               _vm._v(" "),
               _c("h4", { staticClass: "is-size-4 has-text-centered" }, [
-                _vm._v("No session found!")
+                _vm._v("No UAV found!")
               ])
             ],
             1

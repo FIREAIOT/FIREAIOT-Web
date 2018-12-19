@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="button">Add Your Drone</div>
+        <a class="button  primary-btn btn-outlined is-bold is-block">Add Your Drone</a>
     </div>
 </template>
 

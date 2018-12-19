@@ -8,12 +8,13 @@
                     <div class="columns">
                         <div class="column is-one-third" sticky-container>
                             <profile class="animated preFadeInUp fadeInUp"></profile>
+                            <sideBar></sideBar>
                         </div>
 
                         <div class="column is-two-thirds animated preFadeInUp fadeInUp delay-0 pt-30">
                             <statistics></statistics>
-                            
-                            <h1>dsggds</h1>
+
+                            <uavs></uavs>
                         </div>
                     </div>
                 </div>
@@ -29,11 +30,11 @@
 
 <script>
     import { mapGetters } from 'vuex'
+    import Uavs from './components/Uavs'
     import Sticky from 'vue-sticky-directive'
     import Profile from './components/Profile'
     import SideBar from './components/SideBar'
     import navBar from '../../components/NavBar'
-    import Uavs from './components/Uavs'
     import Statistics from './components/Statistics'
     import sharedFooter from '../../components/SharedFooter'
 
