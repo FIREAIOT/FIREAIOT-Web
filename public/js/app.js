@@ -35776,7 +35776,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -35788,7 +35787,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
 
     computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('auth', ['user']),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('auth', ['logout']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapMutations"])('mode', ['setStudentMode']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('auth', ['logout']), {
         submitLogout: function submitLogout() {
             var _this = this;
 
@@ -35797,7 +35796,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 _this.showLogoutInfoMessage();
                 _this.$router.replace({ name: 'home' });
                 _this.isLoading = false;
-                _this.setStudentMode();
             }).catch(function () {
                 return _this.isLoading = false;
             });
@@ -35843,23 +35841,6 @@ var render = function() {
                 [
                   _c("i", { staticClass: "drop-icon sl sl-icon-speedometer" }),
                   _vm._v(" Dashboard")
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    tag: "li",
-                    to: {
-                      name: "profile",
-                      params: { username: _vm.user.username }
-                    }
-                  }
-                },
-                [
-                  _c("i", { staticClass: "drop-icon sl sl-icon-ghost" }),
-                  _vm._v(" Profile")
                 ]
               ),
               _vm._v(" "),
