@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\UAV;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Resources\UAVResource;

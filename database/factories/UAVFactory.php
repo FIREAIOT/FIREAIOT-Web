@@ -12,7 +12,7 @@ $factory->define(\App\UAV::class, function (Faker $faker) {
         'altitude'       => $faker->numberBetween(10, 50),
         'home_latitude'  => $faker->latitude,
         'home_longitude' => $faker->longitude,
-        'user_id'        => function() {
+        'user_id'        => function () {
             return factory(\App\User::class)->create()->id;
         },
     ];

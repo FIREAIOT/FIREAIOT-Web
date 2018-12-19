@@ -18,7 +18,7 @@ class UserResource extends JsonResource
             'id'     => $this->id,
             'name'   => $this->name,
             'email'  => $this->email,
-            'avatar' => "https://www.gravatar.com/avatar/" . md5($this->email),
+            'avatar' => 'https://www.gravatar.com/avatar/'.md5($this->email),
         ];
     }
 }
