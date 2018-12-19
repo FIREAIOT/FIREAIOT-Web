@@ -51547,7 +51547,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.gravatar {\n    position: relative;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.gravatar > img {\n    position: relative;\n    border-radius: 50% !important;\n    -webkit-box-shadow: -1px 3px 10px 0 rgba(0,0,0,.1);\n            box-shadow: -1px 3px 10px 0 rgba(0,0,0,.1);\n    overflow: hidden;\n    width: 100px !important;\n    height: 100px !important;\n}\n.gravatar > i {\n    position: absolute;\n    font-size: 1rem;\n    margin-left: 40px;\n    margin-top: 30px;\n    padding: 10px;\n    background: #039BE5;\n    border-radius: 50%;\n    color: #fff;\n}\n", ""]);
+exports.push([module.i, "\n.gravatar {\n    position: relative;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.gravatar > img {\n    position: relative;\n    border-radius: 10px !important;\n    -webkit-box-shadow: -1px 3px 10px 0 rgba(0,0,0,.1);\n            box-shadow: -1px 3px 10px 0 rgba(0,0,0,.1);\n    overflow: hidden;\n    width: 100px !important;\n    height: 100px !important;\n}\n.gravatar > i {\n    position: absolute;\n    font-size: 1rem;\n    margin-left: 40px;\n    margin-top: 30px;\n    padding: 10px;\n    background: #039BE5;\n    border-radius: 50%;\n    color: #fff;\n}\n", ""]);
 
 // exports
 
@@ -51571,7 +51571,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['user', 'hideAccountBadge'],
     computed: {
         accountBadge: function accountBadge() {
-            return { icon: 'fa fa-check', color: '#3fab81', label: 'Verified Tutor' };
+            return { icon: 'fa fa-check', color: '#3fab81', label: '' };
         }
     }
 });

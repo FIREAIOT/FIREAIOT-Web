@@ -11,7 +11,7 @@
         props: ['user', 'hideAccountBadge'],
         computed: {
             accountBadge() {
-                return {icon: 'fa fa-check', color: '#3fab81', label: 'Verified Tutor'}
+                return {icon: 'fa fa-check', color: '#3fab81', label: ''}
             }
         }
     }
@@ -27,7 +27,7 @@
 
     .gravatar > img {
         position: relative;
-        border-radius: 50% !important;
+        border-radius: 10px !important;
         box-shadow: -1px 3px 10px 0 rgba(0,0,0,.1);
         overflow: hidden;
         width: 100px !important;
