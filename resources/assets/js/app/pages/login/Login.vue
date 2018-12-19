@@ -220,17 +220,9 @@
                 });
             },
             redirectToDashboard() {
-                if(this.user.hasNotCompletedProfile) {
-                    return this.$router.replace({ name: 'completeProfile' })
-                }
-                
                 this.$router.replace({ name: 'dashboard'});
             },
             redirectToQueryUrl() {
-                if(this.user.hasNotCompletedProfile) {
-                    return this.$router.replace({ name: 'completeProfile', query: { redirect: this.$route.query.redirect } })
-                }
-
                 this.$router.replace(this.$route.query.redirect);
             }
         },

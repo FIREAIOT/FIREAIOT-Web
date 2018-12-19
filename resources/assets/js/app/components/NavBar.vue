@@ -45,7 +45,7 @@
 
                         <!-- Dashboard button -->
                         <div v-if="check" class="navbar-item">
-                            <router-link :to="{ name: 'dashboard' }" class="button btn-outlined button-cta is-bold btn-align raised" :class="[isLight ? 'light-btn' : 'primary-btn']">Dashboard</router-link>
+                            <router-link :to="{ name: 'dashboard' }" :class="[isLight ? 'light-btn' : 'primary-btn']">Dashboard</router-link>
                         </div>
                         <!-- /Dashboard button -->
 

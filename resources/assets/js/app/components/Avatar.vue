@@ -2,7 +2,6 @@
     <b-tooltip :label="accountBadge.label" type="is-dark" position="is-top">
         <div class="gravatar">
             <img :src="user.avatar" alt="avatar"/>
-            <i v-if="! hideAccountBadge" :class="accountBadge.icon" :style="{ 'background': accountBadge.color }"></i>
         </div>
     </b-tooltip>
 </template>
@@ -11,39 +10,8 @@
     export default {
         props: ['user', 'hideAccountBadge'],
         computed: {
-            isVerifiedTutor() {
-                if(this.hideAccountBadge) { return  }
-
-                return this.user.roles.includes('tutor')
-            },
-            isTutor() {
-                if(this.hideAccountBadge) { return  }
-
-                return this.isVerifiedTutor || this.user.roles.includes('notVerifiedTutor')
-            },
-            isStudent() {
-                if(this.hideAccountBadge) { return  }
-
-                return this.user.roles.includes('student') && ! this.isTutor
-            },
             accountBadge() {
-                let verfifiedTutorBadge = {icon: 'fa fa-check', color: '#3fab81', label: 'Verified Tutor'}
-                let tutorBadge = {icon: 'fa fa-check', color: '#8898aa', label: 'Tutor'}
-                let studentBadge = {icon: 'fa fa-check', color: '#3498da', label: 'Student'}
-                let noneBadge = {icon: '', color: '#3498da', label: ''}
-
-                // stupid code => change later!!
-                if(this.hideAccountBadge) { return noneBadge }
-
-                if(this.isVerifiedTutor) {
-                    return verfifiedTutorBadge
-                }else if(this.isTutor) {
-                    return tutorBadge
-                }else if(this.isStudent) {
-                    return studentBadge
-                }
-                
-                return noneBadge
+                return {icon: 'fa fa-check', color: '#3fab81', label: 'Verified Tutor'}
             }
         }
     }

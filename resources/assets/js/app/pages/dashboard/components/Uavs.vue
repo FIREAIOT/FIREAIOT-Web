@@ -14,10 +14,10 @@
         <!-- /Loader -->
 
         <div class="tasks-wrapper mt-5" v-if="! isLoading && sessions">
-            <session v-for="session in sessions" 
+            <uav v-for="session in sessions" 
                     :key="session.id" 
                     @click.native="showSession(session)" 
-                    :data="session"></session>
+                    :data="session"></uav>
         </div>
 
         <div class="tasks-wrapper" v-if="! isLoading && ! sessions.length">
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-    import Session from './Session';
+    import Uav from './Uav';
     import { Jumper } from 'vue-loading-spinner'
     import { mapGetters, mapActions, mapMutations } from "vuex"
 
@@ -45,7 +45,7 @@
             }
         },
         components: {
-            Session,
+            Uav,
             Jumper
         }
     }

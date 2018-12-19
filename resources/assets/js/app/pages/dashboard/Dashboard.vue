@@ -8,14 +8,10 @@
                     <div class="columns">
                         <div class="column is-one-third" sticky-container>
                             <profile class="animated preFadeInUp fadeInUp"></profile>
-                            <div class="animated preFadeInUp fadeInUp" v-sticky sticky-offset="offset" sticky-side="top">
-                                <side-bar></side-bar>
-                            </div>
                         </div>
 
                         <div class="column is-two-thirds animated preFadeInUp fadeInUp delay-0 pt-30">
-                            <statistics></statistics>
-                            <sessions></sessions>
+                            <h1>dsggds</h1>
                         </div>
                     </div>
                 </div>
@@ -35,7 +31,7 @@
     import Profile from './components/Profile'
     import SideBar from './components/SideBar'
     import navBar from '../../components/NavBar'
-    import Sessions from './components/Sessions'
+    import Uavs from './components/Uavs'
     import Statistics from './components/Statistics'
     import sharedFooter from '../../components/SharedFooter'
 
@@ -53,7 +49,7 @@
             navBar,
             sharedFooter,
             Statistics,
-            Sessions,
+            Uavs,
             Profile,
             SideBar
         },

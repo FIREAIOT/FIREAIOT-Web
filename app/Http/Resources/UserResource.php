@@ -15,9 +15,10 @@ class UserResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'    => $this->id,
-            'name'  => $this->name,
-            'email' => $this->email,
+            'id'     => $this->id,
+            'name'   => $this->name,
+            'email'  => $this->email,
+            'avatar' => "https://www.gravatar.com/avatar/" . md5($this->email),
         ];
     }
 }

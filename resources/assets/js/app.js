@@ -1,12 +1,14 @@
 require('./bootstrap');
 
 import Vue from 'vue';
+import Buefy from 'buefy';
 import App from "./App.vue";
 import store from './store';
 import router from "./router";
 import localforage from 'localforage';
 import VueIziToast from 'vue-izitoast';
 
+Vue.use(Buefy)
 Vue.use(VueIziToast);
 
 localforage.config({
@@ -25,7 +27,7 @@ store.dispatch('auth/checkTokenExists').then((token) => {
 Vue.component('loader', require('./app/components/Loader.vue'));
 Vue.component('avatar', require('./app/components/Avatar.vue'));
 
-const app = new Vue({
+new Vue({
     el: '#app',
     render: h => h(App),
     router,
