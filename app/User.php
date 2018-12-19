@@ -37,7 +37,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Get all reported alarms by the current user.
+     * Get all uavs for the current user.
      */
     public function uavs()
     {
