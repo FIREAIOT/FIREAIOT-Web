@@ -16,7 +16,7 @@ class CreateUAVsTable extends Migration
         Schema::create('uavs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('uuid');
-            $table->string('ip')->nullable();
+            $table->unsignedInteger('user_id');
             $table->integer('battery')->nullable();
             $table->boolean('isReady')->default(false);
             $table->string('latitude')->nullable();

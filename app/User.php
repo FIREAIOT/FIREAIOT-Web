@@ -35,4 +35,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Alarm::class);
     }
+
+    /**
+     * Get all reported alarms by the current user.
+     */
+    public function uavs()
+    {
+        return $this->hasMany(UAV::class);
+    }
 }
