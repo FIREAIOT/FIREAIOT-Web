@@ -53,7 +53,6 @@ class ResetPasswordController extends Controller
      */
     public function showResetForm(Request $request, $token = null)
     {
-        return;
     }
 
     /**
